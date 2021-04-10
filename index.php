@@ -27,7 +27,7 @@
             <li class="list-inline-item"><a href="#">FAQ</a></li>
         </ul>
     </footer>
-    <script src="Javascript - Typescript/js/jquery.min.js"></script>
+    <script src="Javascript/js/jquery.min.js"></script>
     <script src="CSS/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
