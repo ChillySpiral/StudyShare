@@ -9,7 +9,9 @@
 
 <body>
     <div style="background: #f7f7ff;">
-        <div>Bild</div>
+        <div>
+        <img src="img_hello.jpg" alt="whoops" width="500" height="500">
+        </div>
         <div>
             <table>
                 <tr>
@@ -35,7 +37,7 @@
                 <tr>
                     <td><input type="submit" value="Registrieren"></td>
                 </tr>
-        </table>
+            </table>
         </div>
     </div>
 </body>
