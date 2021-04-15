@@ -16,4 +16,15 @@
   position: relative;
   min-height: 100vh;
 }
+.background{
+  background-image: url("../images/static-images/background-image.png");
+  background-color: lightgrey;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  border: 1px solid #760210;
+  width: 100%;
+  margin: 0px
+}
   
