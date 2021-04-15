@@ -23,7 +23,7 @@
         </div>
     </nav>
     <div class="background container-fluid" style="padding-right: 25%;padding-left: 25%; padding-top: 15%;">
-            <div style="background: #b7b7b7;color: rgb(255,255,255);">
+            <div style="background: rgba(118,118,118,0.27);color: rgb(255,255,255);border-radius: 25px; padding: 8px;">
                 <p style="font-size: 17px;text-align: center;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
             </div>
     </div>
