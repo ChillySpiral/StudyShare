@@ -7,6 +7,8 @@
     <title>Studyshare</title>
     <link rel="stylesheet" href="CSS/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/Footer-Basic.css">
+    <link rel="stylesheet" href="CSS/Login-Form-Clean.css">
+    <link rel="stylesheet" href="CSS/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 
