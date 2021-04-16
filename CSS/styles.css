@@ -1,20 +1,27 @@
 #header-links {
     color: white;
   }
-#Preise-Index
-{
+#Preise-Index {
+  padding-bottom: 80px;
+}
+
+#studyshare-info {
+  padding-top: 60px;
   padding-bottom: 60px;
 }
   
-  #my-footer {
-    position: absolute;
-    bottom: 0;
-    margin-top: auto;
-  }
+#my-footer {
+  position: absolute;
+  bottom: 0;
+   margin-top: auto;
+}
   
 #page-container {
   position: relative;
   min-height: 100vh;
+}
+#chat-pic {
+  width:100%;
 }
 .background{
   background-image: url("../images/static-images/background-image.png");

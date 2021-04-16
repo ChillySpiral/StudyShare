@@ -22,11 +22,26 @@
             </div>
         </div>
     </nav>
+
     <div class="background container-fluid" style="padding-right: 25%;padding-left: 25%; padding-top: 15%;">
             <div style="background: rgba(118,118,118,0.27);color: rgb(255,255,255);border-radius: 25px; padding: 8px;">
                 <p style="font-size: 17px;text-align: center;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
             </div>
     </div>
+
+    <div id="studyshare-info" class="container text-center" style="text-align: center;">
+        <div class="row">
+            <div class="col-md-12">
+            <div style="border-bottom-width: 1px;border-bottom-style: solid;margin-right: 10%;margin-left: 10%;margin-bottom: 5%;">
+                    <h1>Wieso Studyshare?</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12"><img src="images/static-images/chat-placeholder.jpg" id="chat-pic"/></div>
+        </div>
+    </div>
+
     <div id="Preise-Index" class="container text-center" style="text-align: center;">
         <div class="row">
             <div class="col-md-12">
@@ -62,6 +77,7 @@
             </div>
         </div>
     </div>
+
     <footer class="d-flex justify-content-end footer-basic" id="my-footer">
         <ul class="list-inline" style="background: #fe5f55;margin-top: 22px;margin-right: 30px;padding-right: 10px;padding-left: 10px;border-top-left-radius: 35px;border-top-right-radius: 35px;font-size: 24px;color: rgb(255,255,255);">
             <li class="list-inline-item"><a href="#">Impressum</a></li>
