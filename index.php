@@ -7,6 +7,8 @@
     <title>Studyshare</title>
     <link rel="stylesheet" href="CSS/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/Footer-Basic.css">
+    <link rel="stylesheet" href="CSS/Login-Form-Clean.css">
+    <link rel="stylesheet" href="CSS/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 
@@ -21,6 +23,7 @@
             </div>
         </div>
     </nav>
+    <?php include 'components/signup.php'; ?>
     <footer class="d-flex justify-content-end footer-basic" id="my-footer">
         <ul class="list-inline" style="background: #fe5f55;margin-top: 22px;margin-right: 30px;padding-right: 10px;padding-left: 10px;border-top-left-radius: 35px;border-top-right-radius: 35px;font-size: 24px;color: rgb(255,255,255);">
             <li class="list-inline-item"><a href="#">Impressum</a></li>
