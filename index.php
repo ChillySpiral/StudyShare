@@ -18,8 +18,12 @@
         <div class="container-fluid"><a class="navbar-brand" id="header-links" href="#" style="font-size: 30px;">StudyShare</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end" id="navcol-1" style="color: rgb(255,255,255);">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" id="header-links" href="#" style="padding: 8px;">Anmelden</a></li>
-                    <li class="nav-item"><a class="nav-link d-inline-flex" id="header-links" href="#" style="background: #fe5f55;border-radius: 16px;padding: 8px;">Registrieren</a></li>
+                    <li class="nav-item">
+                    <a class="nav-link active" id="header-links" href="#" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link d-inline-flex" id="header-links" href="#" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
+                    </li>
                 </ul>
             </div>
         </div>
