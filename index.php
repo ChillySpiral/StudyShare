@@ -1,3 +1,4 @@
+<?php $_SESSION['user'] = 1; //Toggle for testing?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,10 +20,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navcol-1" style="color: rgb(255,255,255);">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" id="header-links" href="#" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
+                    <a class="nav-link active" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "#Logout";} else {echo "#Anmelden";}?>" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link d-inline-flex" id="header-links" href="#" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
+                    <a class="nav-link d-inline-flex" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "#Profil";} else {echo "#Registrieren";}?>" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
                     </li>
                 </ul>
             </div>
