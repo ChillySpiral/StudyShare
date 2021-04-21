@@ -34,3 +34,11 @@ border: 1px solid #760210;
 width: 100%;
 margin: 0px
 }
+
+.list-group-item {
+  background-color: rgb(247,247,255);
+}
+
+.list-group-item:hover {
+  background-color: #fe5f55;
+}
