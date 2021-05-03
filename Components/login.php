@@ -1,4 +1,3 @@
-
 <section class="register-photo">
     <div class="form-container">
         <form method="post">

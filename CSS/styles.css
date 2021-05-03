@@ -20,9 +20,19 @@ bottom: 0;
 position: relative;
 min-height: 100vh;
 }
+
 #chat-pic {
 width:100%;
 }
+
+#profile-pic {
+  width: 50%
+}
+
+img {
+  border-radius: 10%;
+}
+
 .background{
 background-image: url("../images/static-images/background-image.png");
 background-color: lightgrey;
@@ -42,3 +52,39 @@ margin: 0px
 .list-group-item:hover {
   background-color: #fe5f55;
 }
+
+#fileupload{
+  text-align: center;
+  margin: auto;
+  padding: 10px 30%;
+ 
+}
+
+#fileupload input{
+  border-radius: 10px;
+}
+
+#fileupload input[type="file"] {
+  display: none;
+}
+
+/* Profile settings */
+.pdf-image{
+  float: left;
+}
+
+.pdf-image{
+  width: 120px;
+  margin-right: 40px;
+}
+
+.feed-files{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-description{
+  padding-top: 50px;
+}
+
