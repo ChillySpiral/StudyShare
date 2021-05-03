@@ -105,9 +105,14 @@
             <li class="list-inline-item"><a href="#">FAQ</a></li>
         </ul>
     </footer>
+
 </div>
+
+    <?php include "components/profilesettings.php";?> <!-- debugging purposes -->
+                
     <script src="Javascript/jquery.min.js"></script>
     <script src="CSS/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
