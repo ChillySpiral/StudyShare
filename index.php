@@ -1,4 +1,4 @@
-<?php $_SESSION['user'] = 1; //Toggle for testing?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Studyshare</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="CSS/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/Footer-Basic.css">
     <link rel="stylesheet" href="CSS/Login-Form-Clean.css">
@@ -109,7 +110,7 @@
 </div>
 
     <?php include "components/profilesettings.php";?> <!-- debugging purposes -->
-                
+    <?php include "components/login.php";?>
     <script src="Javascript/jquery.min.js"></script>
     <script src="CSS/bootstrap/js/bootstrap.min.js"></script>
 
