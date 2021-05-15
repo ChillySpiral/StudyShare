@@ -27,7 +27,7 @@ $result = $logic->handleRequest($function, $param);
 
 //If the server returns null, then the httpstatus is set to 400 = Bad Request, if not it is set to 200 = OK
 
-if ($result == null) {
+if ($result == null && $result != false) {
     response("GET", 400, null);
 } else {
     response("GET", 200, $result);

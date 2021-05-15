@@ -39,12 +39,12 @@ class SimpleLogic
                     }
                     else
                     {
-                        $res = null;
+                        $res = false;
                     }
                 }
                 else
                 {
-                    $res = null;
+                    $res = false;
                 }
                 break;
             default:
