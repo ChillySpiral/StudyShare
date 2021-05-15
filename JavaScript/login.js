@@ -18,7 +18,6 @@ function sendData()
         dataType: "json",
         success: function(response)
         {
-            debugger;
             console.log(str);
             location.reload(); //Not working, maybe async false
         }

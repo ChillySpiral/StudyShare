@@ -1,7 +1,7 @@
 <?php
 require "./Utility/users.class.php";
 require "./Utility/files.class.php";
-
+session_start();
 class SimpleLogic
 {
     private $file_con;
