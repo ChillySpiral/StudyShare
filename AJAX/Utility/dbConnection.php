@@ -1,9 +1,9 @@
 <?php
 class Db { //Datenbankanbindung über PDO
     private $host = 'localhost';
-    private $user = '';
-    private $password = '';
-    private $dbname = '';
+    private $user = 'bif2webscriptinguser';
+    private $password = 'bif2021';
+    private $dbname = 'studyshare';
 
     protected function connect() { //SQL Fehler werden hier abgefangen und lesbar ausgegeben, die connect-Methode wird in allen anderen Methoden verwendet
         try{

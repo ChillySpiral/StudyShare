@@ -11,7 +11,7 @@ class SimpleLogic
         $this->user_con = new user();
         $this->file_con = new user();
     }
-
+    private $res = null;
     //Handles Request and Param
     function handleRequest($method, $param)
     {
@@ -19,8 +19,8 @@ class SimpleLogic
             case 'login':
                 //todo
                 parse_str($param, $paramArray);
-                $email = array_pop($paramArray);
                 $password = array_pop($paramArray);
+                $email = array_pop($paramArray);
 
                 $user_data = $this->user_con->loginUser($email, $password);
                 if($user_data)
@@ -32,8 +32,12 @@ class SimpleLogic
                     }
                     else
                     {
-                        $res = false;
+                        $res = null;
                     }
+                }
+                else
+                {
+                    $res = null;
                 }
                 break;
             default:
