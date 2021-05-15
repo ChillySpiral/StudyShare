@@ -10,6 +10,7 @@ function sendData()
 {
     var str = $("#Anmelden_Form").serialize();
     $.ajax({
+        async: false,
         type: "POST",
         url: "./AJAX/serviceHandler.php",
         cache: false,
@@ -17,7 +18,9 @@ function sendData()
         dataType: "json",
         success: function(response)
         {
+            debugger;
             console.log(str);
+            location.reload(); //Not working, maybe async false
         }
     })
 }
