@@ -1,14 +1,14 @@
 $(document).ready(function(){
     $("#Anmelden").on("click", function(){
         sendData();
-        $("form").trigger("reset");
+        $("form").trigger("reset");     //Resets the form after pressing submit
     })
 })
 
 
 function sendData()
 {
-    var str = $("#Anmelden_Form").serialize();
+    var str = $("#Anmelden_Form").serialize(); //Puts all the form content in one string
     $.ajax({
         async: false,
         type: "POST",
@@ -19,7 +19,7 @@ function sendData()
         success: function(response)
         {
             console.log(str);
-            location.reload(); //Not working, maybe async false
+            location.reload();      //if the response is not NULL the user is logged in and the page refreshed
         }
     })
 }

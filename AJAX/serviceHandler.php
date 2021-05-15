@@ -6,7 +6,7 @@ $function = "";
 $result = null;
 
 /**
- * Wenn POST function und param gesetzt ist, werden diese in die lokalen variablen gespeichert und die Abfrage ob GET gesetzt ist übersprungen
+ * If data is sent through post, the data is saved to local variables and the check for set get data is skipped
  */
 if(isset($_POST['function']) && isset($_POST['param']))
 {
@@ -20,12 +20,12 @@ isset($_GET["param"]) ? $param = $_GET["param"] : false;
 
 skip_get:
 
-//Neues Simplelogic object, übernimmt die funktion und die param als Paremeter um sie auszuwerten
+//New simplelogic object created to handle function and param, which were sent to the the backend
 
 $logic = new SimpleLogic();
 $result = $logic->handleRequest($function, $param);
 
-//Falls der Server null zurück gibt, so wird Httpstatus 400 = Bad Request zurückgegeben ansonsten 200 = OK
+//If the server returns null, then the httpstatus is set to 400 = Bad Request, if not it is set to 200 = OK
 
 if ($result == null) {
     response("GET", 400, null);
@@ -33,7 +33,7 @@ if ($result == null) {
     response("GET", 200, $result);
 }
 
-//Gibt den erhaltenen Datensatz als json Object zurück
+//Sends the data back to the frontend encoded in json format
 
 function response($method, $httpStatus, $data)
 {
