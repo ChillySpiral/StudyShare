@@ -8,7 +8,7 @@ class user extends Db
     {
         $sql = ("INSERT INTO users (username, email, firstname, lastname, password, is_admin) VALUES (?,?,?,?,?,?)");
         $stmt = $this->connect()->prepare($sql);
-        $result = $stmt->exectue([$username, $email, $firstname, $lastname, $password, $is_admin]); //Passwort Hash bei User dann hinzufügen
+        $result = $stmt->execute([$username, $email, $firstname, $lastname, $password, $is_admin]); //Passwort Hash bei User dann hinzufügen
 
         return $result;
     }
@@ -17,7 +17,7 @@ class user extends Db
     {
         $sql = ("SELECT (username, email, firstname, lastname) FROM users WHERE id = ?");
         $stmt = $this->connect()->prepare($sql);
-        $stmt->exectue([$user_id]);
+        $stmt->execute([$user_id]);
         $result = $stmt->fetch();
 
         return $result;

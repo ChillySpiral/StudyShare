@@ -1,4 +1,4 @@
-<?php $_SESSION['user'] = 1; //Toggle for testing?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Studyshare</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="CSS/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/Footer-Basic.css">
     <link rel="stylesheet" href="CSS/Login-Form-Clean.css">
@@ -19,7 +20,7 @@
 <body style="background: #f7f7ff;">
 <div id="page-container">
     <nav class="navbar navbar-light navbar-expand-md sticky-top" id="my-navbar" style="background: #577399;border-radius: 0;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
-        <div class="container-fluid"><a class="navbar-brand" id="header-links" href="#" style="font-size: 30px;">StudyShare</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid"><a class="navbar-brand" id="header-links" href="" style="font-size: 30px;">StudyShare</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse justify-content-end" id="navcol-1" style="color: rgb(255,255,255);">
             </form>
                 <ul class="navbar-nav">
@@ -35,7 +36,7 @@
                     </from>
                     </li>';}?>
                     <li class="nav-item">
-                    <a class="nav-link active" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "#Logout";} else {echo "#Anmelden";}?>" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
+                    <a class="nav-link active" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "Components/logout.php";} else {echo "Components/login.php";}?>" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link d-inline-flex" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "#Profil";} else {echo "#Registrieren";}?>" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
@@ -109,7 +110,6 @@
 </div>
 
     <?php include "components/profilesettings.php";?> <!-- debugging purposes -->
-                
     <script src="Javascript/jquery.min.js"></script>
     <script src="CSS/bootstrap/js/bootstrap.min.js"></script>
 
