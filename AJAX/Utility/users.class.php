@@ -4,11 +4,11 @@ require_once('dbConnection.php');
 class user extends Db
 {
 
-    public function createUser($username, $email, $firstname, $lastname, $password, $is_admin)
+    public function createUser($username, $email, $firstname, $lastname, $password)
     {
-        $sql = ("INSERT INTO users (username, email, firstname, lastname, password, is_admin) VALUES (?,?,?,?,?,?)");
+        $sql = ("INSERT INTO users (username, email, firstname, lastname, password) VALUES (?,?,?,?,?)");
         $stmt = $this->connect()->prepare($sql);
-        $result = $stmt->execute([$username, $email, $firstname, $lastname, $password, $is_admin]); //Passwort Hash bei User dann hinzufügen
+        $result = $stmt->execute([$username, $email, $firstname, $lastname, $password]); //Passwort Hash bei User dann hinzufügen
 
         return $result;
     }
