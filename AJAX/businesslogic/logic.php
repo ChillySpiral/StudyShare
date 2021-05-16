@@ -32,7 +32,7 @@ class SimpleLogic
                 $user_data = $this->user_con->loginUser($email, $password);
                 if($user_data)
                 {
-                    if($password == $user_data['password'])
+                    if(password_verify($password, $user_data['password'])) //Checks if hashed password matches
                     {
                         $_SESSION['user'] = $user_data['id'];
                         $res = true;
@@ -48,6 +48,13 @@ class SimpleLogic
                 }
                 break;
             case 'signup':
+                /**
+                 * Parses Form string and puts the elements in single variables
+                 * Checks if all fields have been filled out
+                 * Validates Email
+                 * And checks for matching passwords
+                 * Hashes Password and inserts it into the database
+                 */
                 parse_str($param, $paramArray);
                 $password2 = array_pop($paramArray);
                 $password = array_pop($paramArray);
@@ -58,10 +65,17 @@ class SimpleLogic
 
                 if($password2 != "" && $password != "" && $email != "" && $username != "" && $nachname != "" && $vorname != "")
                 {
-
-                    if($password == $password2)
+                    if(filter_var($email, FILTER_VALIDATE_EMAIL))
                     {
-                        $res = $this->user_con->createUser($username, $email, $vorname, $nachname, $password);
+                        if($password == $password2)
+                        {
+                            $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+                            $res = $this->user_con->createUser($username, $email, $vorname, $nachname, $password_hashed);
+                        }
+                    }
+                    else
+                    {
+                        $res = false;
                     }
                 }
                 else
