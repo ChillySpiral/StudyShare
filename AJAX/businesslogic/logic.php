@@ -47,6 +47,29 @@ class SimpleLogic
                     $res = false;
                 }
                 break;
+            case 'signup':
+                parse_str($param, $paramArray);
+                $password2 = array_pop($paramArray);
+                $password = array_pop($paramArray);
+                $email = array_pop($paramArray);
+                $username = array_pop($paramArray);
+                $nachname = array_pop($paramArray);
+                $vorname = array_pop($paramArray);
+
+                if($password2 != "" && $password != "" && $email != "" && $username != "" && $nachname != "" && $vorname != "")
+                {
+
+                    if($password == $password2)
+                    {
+                        $res = $this->user_con->createUser($username, $email, $vorname, $nachname, $password);
+                    }
+                }
+                else
+                {
+                    $res = false;
+                }
+
+                break;
             default:
                 $res = null;
                 break;
