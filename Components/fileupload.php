@@ -1,11 +1,11 @@
 <div id="fileupload" class="col-md-12">
     <h2>Unterlagen einreichen</h2>
     <hr>
-    <form method="post">
+    <form method="POST" action="../AJAX/upload.php" enctype="multipart/form-data">
         <label for="document">
             <p class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">PDF auswählen</p>
         </label><br>
-        <input type="file" id="document" name="filename" required>
+        <input type="file" id="document" name="file" required>
         <div class="form-group">
             <input class="form-control" type="text" id="title" name="title" placeholder="Titel">
         </div>
@@ -22,7 +22,7 @@
                         <option value="6">Geschichte</option>
                     </optgroup>
                 </select>
-        <br><button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;" type="submit">Einreichen</button>
+        <br><button class="btn btn-primary" name="upload" style="background: #fe5f55;border-radius: 15px;" type="submit">Einreichen</button>
     </form>
 </div>
 

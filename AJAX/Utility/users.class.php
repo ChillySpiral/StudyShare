@@ -23,6 +23,16 @@ class user extends Db
         return $result;
     }
 
+    public function getUserID($username)
+    {
+        $sql = ("SELECT (id) FROM users WHERE username = ?");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$username]);
+        $result = $stmt->fetch();
+
+        return $result;
+    }
+
     public function loginUser($email, $password) //Email Unique machen in der Datanbank
     {
         $sql = ("SELECT password, id FROM users WHERE email = ?");

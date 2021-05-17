@@ -4,10 +4,10 @@ require_once('dbConnection.php'); //Datenbankanbindung
 class files extends Db
 {
 
-    public function setFile($user_id, $title, $info, $subject_id, $filename) { //uploads file info into db
-        $sql = ("INSERT INTO documents (user_id, title, info, subject_id, filename) VALUES (?, ?, ?, ?, ?)");
+    public function setFile($user_id, $title, $description, $subject_id, $filename) { //uploads file info into db
+        $sql = ("INSERT INTO documents (user_id, title, description, subject_id, filename) VALUES (?, ?, ?, ?, ?)");
         $stmt = $this->connect()->prepare($sql);
-        $result = $stmt->execute([$user_id, $title, $info, $subject_id, $filename]);
+        $result = $stmt->execute([$user_id, $title, $description, $subject_id, $filename]);
         return $result;
     }
 
