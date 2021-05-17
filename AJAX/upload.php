@@ -8,7 +8,7 @@ if(isset($_POST['upload'])) //Upload von einem neuen Beitrag
 
         $fileName = $_FILES['file']['name'];
         // Filepfad festlegen...
-        move_uploaded_file($_FILES['file']['tmp_name'], '../AJAX/uploads'.$fileName);
+        move_uploaded_file($_FILES['file']['tmp_name'], '../AJAX/uploads/'.$fileName);
 
     if (isset($_SESSION['user'])) {
         $user_id = $_SESSION['user'];
@@ -20,4 +20,5 @@ if(isset($_POST['upload'])) //Upload von einem neuen Beitrag
     }
 
 }
+header('Location: ../index.php');
 ?>
