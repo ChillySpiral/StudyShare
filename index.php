@@ -61,7 +61,26 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12"><img src="images/static-images/chat-placeholder.jpg" id="chat-pic"/></div>
+            <div class="col-md-12">
+                <div class="bubble-left">
+                    <div class="bubble-content-left">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea…
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="bubble-right">
+                    <div class="bubble-content-right">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
+                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea…
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
