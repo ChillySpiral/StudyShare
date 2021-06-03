@@ -90,6 +90,15 @@ class SimpleLogic
                 default:
                 $res = null;
                 break;
+            case 'mod_approve':
+                 $res = $this->file_con->modApprove($param);
+                break;
+            case 'mod_delete':
+                //Finds the filename, deletes it from the database and deletes the file from the server
+                $filename = $this->file_con->getFileNameByFileID($param);
+                $res = $this->file_con->modDelete($param);
+                unlink("../AJAX/uploads/".$filename['filename']."");
+                break;
         }
         return $res;
     }
