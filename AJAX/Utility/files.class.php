@@ -37,6 +37,21 @@ class files extends Db
         $results = $stmt->fetchAll();
         return $results;
     }
+
+    public function modGetFiles()
+    {
+        $sql = ("SELECT * FROM documents 
+        INNER JOIN users 
+        ON documents.user_id = users.id
+        INNER JOIN subjects
+        ON documents.subject_id = subjects.id
+        WHERE documents.Review = '0'");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll();
+        return $results;
+    }
 }
 
 

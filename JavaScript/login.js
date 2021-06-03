@@ -19,7 +19,6 @@ function sendData()
         dataType: "json",
         success: function(response)
         {
-            debugger;
             if(response == true)
             {
                 $("#fail_log").hide();             //Error Message hidden if log in sucessful
