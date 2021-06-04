@@ -15,7 +15,7 @@ class user extends Db
 
     public function getUser($user_id)
     {
-        $sql = ("SELECT (username, email, firstname, lastname) FROM users WHERE id = ?");
+        $sql = ("SELECT username, email, firstname, lastname FROM users WHERE id = ?");
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$user_id]);
         $result = $stmt->fetch();
@@ -25,12 +25,18 @@ class user extends Db
 
     public function getUserID($username)
     {
-        $sql = ("SELECT (id) FROM users WHERE username = ?");
+        $sql = ("SELECT id FROM users WHERE username = ?");
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$username]);
         $result = $stmt->fetch();
 
         return $result;
+    }
+
+    public function updateUser($id, $email, $username, $firstname, $lastname) { //updated Userdaten, wird für das bearbeiten benötigt
+        $sql = ("UPDATE users SET email = ?, username = ?, firstname = ?, lastname = ? WHERE id = $id");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$email, $username, $firstname, $lastname]);
     }
 
     public function loginUser($email, $password) //Email Unique machen in der Datanbank

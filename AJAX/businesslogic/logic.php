@@ -9,7 +9,7 @@ class SimpleLogic
     function __construct()
     {
         $this->user_con = new user();
-        $this->file_con = new user();
+        $this->file_con = new files();
     }
     private $res = null;
     //Handles Request(which function is to be used), param(data that is sent from the frontend to the backend)
