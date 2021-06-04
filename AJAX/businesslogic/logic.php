@@ -35,6 +35,10 @@ class SimpleLogic
                     if(password_verify($password, $user_data['password'])) //Checks if hashed password matches
                     {
                         $_SESSION['user'] = $user_data['id'];
+                        if($user_data['is_admin'] == 1)
+                        {
+                            $_SESSION['mod'] = 1;
+                        }
                         $res = true;
                     }
                     else

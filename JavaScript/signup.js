@@ -21,12 +21,12 @@ function sendData()
         {
             if(response == true)
             {
-                $("#fail_log").hide();             //Error Message hidden if log in sucessful
-                window.location.href="../";      //if the response is not NULL the user is logged in and redirected to the front page
+                $("#fail_log").hide();             //Error Message hidden if signup sucessful
+                window.location.href="login.php";      //if the response is not NULL the user is registred and redirected to the login page
             }
             else
             {
-                $("#fail_log").show();          //show error message in case of a failed login attempt
+                $("#fail_log").show();          //show error message in case of a failed signup attempt
             }
 
         }
