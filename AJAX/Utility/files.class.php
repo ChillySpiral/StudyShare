@@ -37,6 +37,49 @@ class files extends Db
         $results = $stmt->fetchAll();
         return $results;
     }
+
+    //Gets all Files which aren't reviewed yet (left joins users and subjects to documents)
+    public function modGetFiles()
+    {
+        $sql = ("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename FROM documents 
+        LEFT JOIN users 
+        ON documents.user_id = users.id
+        LEFT JOIN subjects
+        ON documents.subject_id = subjects.id
+        WHERE documents.Review = '0'");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll();
+        return $results;
+    }
+
+    //If a document has been approved it is set to 1
+    public function modApprove($id){
+        $sql = ("UPDATE documents SET Review = '1' WHERE id = $id");
+        $stmt = $this->connect()->prepare($sql);
+        $result = $stmt->execute();
+
+        return $result;
+    }
+
+    //Delete request from the moderator
+    public function modDelete($id){
+        $sql = ("DELETE FROM documents WHERE id = $id");
+        $stmt = $this->connect()->prepare($sql);
+        $result = $stmt->execute();
+
+        return $result;
+    }
+
+    public function getFileNameByFileID($file_id) {
+        $sql = ("SELECT filename FROM documents WHERE id = $file_id");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt->fetch();
+        return $result;
+    }
 }
 
 

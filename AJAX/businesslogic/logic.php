@@ -35,6 +35,10 @@ class SimpleLogic
                     if(password_verify($password, $user_data['password'])) //Checks if hashed password matches
                     {
                         $_SESSION['user'] = $user_data['id'];
+                        if($user_data['is_admin'] == 1)
+                        {
+                            $_SESSION['mod'] = 1;
+                        }
                         $res = true;
                     }
                     else
@@ -84,8 +88,20 @@ class SimpleLogic
                 }
 
                 break;
-            default:
+            case 'moderator':
+                    $res = $this->file_con->modGetFiles();
+                break;
+                default:
                 $res = null;
+                break;
+            case 'mod_approve':
+                 $res = $this->file_con->modApprove($param);
+                break;
+            case 'mod_delete':
+                //Finds the filename, deletes it from the database and deletes the file from the server
+                $filename = $this->file_con->getFileNameByFileID($param);
+                $res = $this->file_con->modDelete($param);
+                unlink("../AJAX/uploads/".$filename['filename']."");
                 break;
         }
         return $res;

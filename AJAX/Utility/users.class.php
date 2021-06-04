@@ -41,7 +41,7 @@ class user extends Db
 
     public function loginUser($email, $password) //Email Unique machen in der Datanbank
     {
-        $sql = ("SELECT password, id FROM users WHERE email = ?");
+        $sql = ("SELECT password, id, is_admin FROM users WHERE email = ?");
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email]);
         $result = $stmt->fetch();

@@ -35,6 +35,15 @@
                         </div>
                     </from>
                     </li>';}?>
+                    <?php
+                    if(isset($_SESSION['mod']))
+                    {
+                    echo '
+                    <li class="nav-item">
+                    <a class="nav-link active" id="header-links" href="Components/mod.php">Review</a>
+                    </li>';
+                    }
+                    ?>
                     <li class="nav-item">
                     <a class="nav-link active" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "Components/logout.php";} else {echo "Components/login.php";}?>" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
                     </li>
