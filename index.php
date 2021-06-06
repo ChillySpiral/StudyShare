@@ -27,11 +27,11 @@
                 <?php if(isset($_SESSION['user']))
                 { echo '
                     <li class="nav-item" style="min-height: 40px;">
-                    <form action="" class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style="display: inline-block !important;">
+                    <form id="Search_Form" class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style="display: inline-block !important;">
                         <div class="input-group">
-                            <input type="text" class="bg-light form-control border-0 small" placeholder="Suche Notizen, Zusammenfassungen & Mitschriften" style="border-top-left-radius: 15px;border-bottom-left-radius: 15px;" />
+                            <input name="Search_Text" type="text" class="bg-light form-control border-0 small" placeholder="Suche Notizen, Zusammenfassungen & Mitschriften" style="border-top-left-radius: 15px;border-bottom-left-radius: 15px;" />
                         <div class="input-group-append">
-                            <button type="submit" class="btn py-0" type="button" style="border-top-right-radius: 15px;border-bottom-right-radius: 15px;background: rgb(248,249,252);border-width: 1px;"><i class="fas fa-search" style="color: rgb(0,0,0);"></i></button></div>
+                            <button id="Search_Button" type="button" class="btn py-0" type="button" style="border-top-right-radius: 15px;border-bottom-right-radius: 15px;background: rgb(248,249,252);border-width: 1px;"><i class="fas fa-search" style="color: rgb(0,0,0);"></i></button></div>
                         </div>
                     </from>
                     </li>';}?>
@@ -54,7 +54,8 @@
             </div>
         </div>
     </nav>
-
+<?php if(!isset($_SESSION['user']))
+    { echo '
     <div class="background container-fluid" style="padding-right: 25%;padding-left: 25%; padding-top: 15%;">
             <div style="background: rgba(118,118,118,0.27);color: rgb(255,255,255);border-radius: 25px; padding: 8px;">
                 <p style="font-size: 17px;text-align: center;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
@@ -127,7 +128,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>';}
+    else if(isset($_SESSION['user']))
+    {
+        require './Components/feed.php';
+    }
+    ?>
     <footer class="d-flex justify-content-end footer-basic" id="my-footer">
         <ul class="list-inline" style="background: #fe5f55;margin-top: 22px;margin-right: 30px;padding-right: 10px;padding-left: 10px;border-top-left-radius: 35px;border-top-right-radius: 35px;font-size: 24px;color: rgb(255,255,255);">
             <li class="list-inline-item"><a href="#">Impressum</a></li>
@@ -137,9 +143,11 @@
 
 </div>
 
-    <?php include "components/profilesettings.php";?> <!-- debugging purposes -->
+    
     <script src="Javascript/jquery.min.js"></script>
     <script src="CSS/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Javascript/search.js"></script>
+    <?php include "components/profilesettings.php";?> <!-- debugging purposes -->
 
 </body>
 

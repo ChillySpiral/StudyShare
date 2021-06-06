@@ -80,6 +80,21 @@ class files extends Db
         $result = $stmt->fetch();
         return $result;
     }
+
+    public function getSearch($text)
+    {
+        $sql=("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename FROM documents 
+        LEFT JOIN users 
+        ON documents.user_id = users.id
+        LEFT JOIN subjects
+        ON documents.subject_id = subjects.id
+        WHERE documents.Review = '1' AND (documents.title LIKE '%$text%' OR documents.description LIKE '%$text%')");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll();
+        return $results;
+    }
 }
 
 
