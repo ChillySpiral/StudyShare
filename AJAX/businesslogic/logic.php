@@ -103,6 +103,11 @@ class SimpleLogic
                 $res = $this->file_con->modDelete($param);
                 unlink("../AJAX/uploads/".$filename['filename']."");
                 break;
+            case 'search':
+                parse_str($param, $paramArray);
+                $text = array_pop($paramArray);
+                $res = $this->file_con->getSearch($text);
+                break;
         }
         return $res;
     }
