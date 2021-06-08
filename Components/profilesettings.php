@@ -1,11 +1,29 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Studyshare</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../CSS/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/Footer-Basic.css">
+    <link rel="stylesheet" href="../CSS/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../CSS/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../CSS/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/fonts/fontawesome5-overrides.min.css">
+</head>
+
 <?php
 session_start();
 require_once('../AJAX/Utility/users.class.php');
+require_once('../AJAX/Utility/files.class.php');
 $userObj = new user();
+$fileObj = new files();
 
 if (isset($_SESSION['user'])) {
     $user_id = $_SESSION['user'];
     $user = $userObj->getUser($user_id);
+    $documents = $userObj->getUserDocuments($user_id);
 }
 
 if(isset($_POST["editSubmit"])) {
@@ -13,6 +31,27 @@ if(isset($_POST["editSubmit"])) {
 
     header("location: logout.php");
 }
+if(isset($_GET["delete"])){ 
+    $fileObj->modDelete($_GET["delete"]);
+} 
+
+if(isset($_GET["download"])){
+    $doc = $fileObj->getFilebyFileID($_GET["download"]);
+    $filename = $doc["filename"];
+    $file = '../AJAX/uploads/' . $filename;
+    if(!file_exists($file)){ // file does not exist
+        die('file not found');
+    } else {
+        header("Cache-Control: public");
+        header("Content-Description: File Transfer");
+        header("Content-Disposition: attachment; filename=$file");
+        header("Content-Type: application/zip");
+        header("Content-Transfer-Encoding: binary");
+    
+        // read the file from disk
+        readfile($file);
+    }
+} 
 ?>
 
 <div id="fileupload" class="col-md-12">
@@ -20,7 +59,7 @@ if(isset($_POST["editSubmit"])) {
     <hr>
     <!--Profilbild -->
     <div class="row">
-        <div class="col-md-12"><img src="images/static-images/profilepicture-placeholder.jpg" id="profile-pic"/></div>
+        <div class="col-md-12"><img src="../images/static-images/profilepicture-placeholder.jpg" id="profile-pic"/></div>
     </div>
     <br>
     <?php
@@ -53,17 +92,19 @@ if(isset($_POST["editSubmit"])) {
     <br>
 </div>
 
-<?php include "fileupload.php";?>
+<?php include "fileupload.php";
+
+
+
+for($p = 0; $p < count($documents); $p++) { ?>
 
 <div class="feed-files">
-        <div class="pdf-image">
-            <h1>Heading</h1>
-            <img class="pdf-image" src="images/static-images/pdf.png"></div>
-        <div class="pdf-description">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, <br>
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna <br>
-            aliquyam erat, sed diam voluptua. At vero eos et accusam et <br>
-            justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea… <br>
-            <p>Kategorie: Lorem ipsum</p><button class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;" type="button">Anzeigen</button>   <button class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;" type="button">Löschen</button>
-        </div>
-</div>
+    <div class="pdf-image">
+        <h1><? echo $documents[$p]["title"] ?></h1>
+        <img class="pdf-image" src="../images/static-images/pdf.png"></div>
+    <div class="pdf-description">
+        <? echo $documents[$p]["description"] ?>
+        <p><? echo $documents[$p]["subject_id"] ?></p><a href="?download=<?php echo $documents[$p]["id"]?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Anzeigen</a>   <a href="?delete=<?php echo $documents[$p]["id"] ?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Löschen</a>
+    </div>
+</div>        
+<? } ?>

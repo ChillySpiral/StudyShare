@@ -1,6 +1,6 @@
 <?php
-require "../Utility/users.class.php";
-require "../Utility/files.class.php";
+require "./Utility/users.class.php";
+require "./Utility/files.class.php";
 session_start();
 class SimpleLogic
 {
@@ -103,7 +103,7 @@ class SimpleLogic
                 $res = $this->file_con->modDelete($param);
                 unlink("../AJAX/uploads/".$filename['filename']."");
                 break;
-            case 'addSubscription': //NOT WORKING
+            /* case 'addSubscription': //NOT WORKING
                 echo  $param; //debugging
                 $date = date_create();
 
@@ -124,7 +124,7 @@ class SimpleLogic
                     //error?
                 }
                 $res = null;
-                break;
+                break; */
         }
         return $res;
     }

@@ -19,7 +19,7 @@
 
 <body style="background: #f7f7ff;">
 
-<form>
+<form method="POST">
 <div id="Preise-Index" class="container text-center" style="text-align: center;">
         <div class="row">
             <div class="col-md-12" style="text-align: left;">            
@@ -70,3 +70,26 @@
 
 </body>
 </html>
+
+<?php
+    /* $date = date_create();
+    if(isset())
+    $param = $_POST["subscription"];
+
+    if($param == "option1"){
+        if(date_create($user->getSubscriptionDate) < $date){
+            //subscription expired, add 1 month to current timestamp
+        }else{
+            //user has active subscription, add 1 month to existing timestamp from DB 
+        }
+    }
+    else if($param == "option2"){
+        //same as above, just add 3 months
+    }
+    else if($param == "option3"){
+        //same here, just add 12 months / 1 year
+    }
+    else{
+        //error?
+    } */
+?>

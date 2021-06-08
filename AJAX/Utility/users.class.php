@@ -90,9 +90,19 @@ class user extends Db
     {
 
     }
+
+    public function getUserDocuments($user_id){
+        $sql = ("SELECT * FROM documents WHERE user_id = ?");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$user_id]);
+        $result = $stmt->fetchAll();
+ 
+        return $result;
+    }
 }
 
 //$userDebug = new user();
 //$userDebug->setSubscription(2, "2021-06-30 20:15:00");
 //echo $userDebug->getSubscription(2);
+//var_dump($userDebug->getUserDocuments(2));
 ?>
