@@ -103,28 +103,11 @@ class SimpleLogic
                 $res = $this->file_con->modDelete($param);
                 unlink("../AJAX/uploads/".$filename['filename']."");
                 break;
-            /* case 'addSubscription': //NOT WORKING
-                echo  $param; //debugging
-                $date = date_create();
-
-                if($param == "option1"){
-                    if(date_create($this->user_con->getSubscriptionDate) < $date){
-                        //subscription expired, add 1 month to current timestamp
-                    }else{
-                        //user has active subscription, add 1 month to existing timestamp from DB 
-                    }
-                }
-                else if($param == "option2"){
-                    //same as above, just add 3 months
-                }
-                else if($param == "option3"){
-                    //same here, just add 12 months / 1 year
-                }
-                else{
-                    //error?
-                }
-                $res = null;
-                break; */
+            case 'search':
+                parse_str($param, $paramArray);
+                $text = array_pop($paramArray);
+                $res = $this->file_con->getSearch($text);
+                break;
         }
         return $res;
     }
