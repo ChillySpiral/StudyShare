@@ -1,5 +1,12 @@
 $(document).ready(function(){
     $("#fail_log").hide();
+    $('#Registrieren_Form').keydown(function (e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+            sendData();
+            $("form").trigger("reset"); 
+        }
+    });
     $("#Registrieren").on("click", function(){
         sendData();
         $("form").trigger("reset");     //Resets the form after pressing submit
