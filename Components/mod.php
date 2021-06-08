@@ -25,22 +25,11 @@
             <div class="collapse navbar-collapse justify-content-end" id="navcol-1" style="color: rgb(255,255,255);">
             </form>
                 <ul class="navbar-nav">
-                <?php if(isset($_SESSION['user']))
-                { echo '
-                    <li class="nav-item" style="min-height: 40px;">
-                    <form action="" class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style="display: inline-block !important;">
-                        <div class="input-group">
-                            <input type="text" class="bg-light form-control border-0 small" placeholder="Suche Notizen, Zusammenfassungen & Mitschriften" style="border-top-left-radius: 15px;border-bottom-left-radius: 15px;" />
-                        <div class="input-group-append">
-                            <button type="submit" class="btn py-0" type="button" style="border-top-right-radius: 15px;border-bottom-right-radius: 15px;background: rgb(248,249,252);border-width: 1px;"><i class="fas fa-search" style="color: rgb(0,0,0);"></i></button></div>
-                        </div>
-                    </from>
-                    </li>';}?>
                     <li class="nav-item">
                     <a class="nav-link active" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "logout.php";} else {echo "login.php";}?>" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link d-inline-flex" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "#Profil";} else {echo "signup.php";}?>" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
+                    <a class="nav-link d-inline-flex" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "profilesettings.php";} else {echo "signup.php";}?>" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
                     </li>
                 </ul>
             </div>

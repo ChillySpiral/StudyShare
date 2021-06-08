@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -32,7 +35,10 @@ if(isset($_POST["editSubmit"])) {
     header("location: logout.php");
 }
 if(isset($_GET["delete"])){ 
+    $filename = $fileObj->getFileNameByFileID($_GET["delete"]);
     $fileObj->modDelete($_GET["delete"]);
+    unlink("../AJAX/uploads/".$filename['filename']."");
+    header('Location: ./Profilesettings.php');
 } 
 
 if(isset($_GET["download"])){
@@ -53,19 +59,47 @@ if(isset($_GET["download"])){
     }
 } 
 ?>
+<body style="background: #f7f7ff;">
+<div id="page-container">
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" id="my-navbar" style="background: #577399;border-radius: 0;border-bottom-right-radius: 7px;border-bottom-left-radius: 7px;">
+        <div class="container-fluid"><a class="navbar-brand" id="header-links" href="../" style="font-size: 30px;">StudyShare</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navcol-1" style="color: rgb(255,255,255);">
+            </form>
+                <ul class="navbar-nav">
+                <?php
+                    if(isset($_SESSION['mod']))
+                    {
+                    echo '
+                    <li class="nav-item">
+                    <a class="nav-link active" id="header-links" href="mod.php">Review</a>
+                    </li>';
+                    }
+                    ?>
+                    <li class="nav-item">
+                    <a class="nav-link active" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "logout.php";} else {echo "";}?>" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link d-inline-flex" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "";} else {echo "signup.php";}?>" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div id="fileupload" class="col-md-12">
-    <h2>Username</h2>
+<div id="fileupload" class="container col-12">
+    <h2><?php echo $user['username'];?></h2>
     <hr>
     <!--Profilbild -->
     <div class="row">
-        <div class="col-md-12"><img src="../images/static-images/profilepicture-placeholder.jpg" id="profile-pic"/></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6 d-flex justify-content-center"><img src="../images/static-images/profilepicture-placeholder.jpg" id="profile-pic"/></div>
+        <div class="col-md-3"></div>
     </div>
     <br>
     <?php
     if(isset($_GET["id"])){ 
     ?>
-    <div class="editUser">
+    <div class="editUser container">
         <h2>Edit user:</h2>
         <form action="profilesettings.php?id=<?php echo $_GET["id"] ?>" method="post">
             <div class="form-outline mb-4">
@@ -85,26 +119,48 @@ if(isset($_GET["download"])){
         </div>
     </form>
     <?php } ?>
-    <a href="?id=<?php echo $user_id?>" class="btn btn-primary" style="background: #fe5f55; border-radius: 15px;">Einstellungen</a>
-    <!-- html goes brrr-->
+    <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2 d-flex justify-content-center"><a href="?id=<?php echo $user_id?>" class="btn btn-primary" style="background: #fe5f55; border-radius: 15px;">Einstellungen</a></div>
+    <div class="col-md-5"></div>
+    </div>
+   <!-- html goes brrr ... -.- -->
     <br> 
-    <br>
-    <br>
 </div>
 
-<?php include "fileupload.php";
+<div class="container">
+<div class="row">
+
+<?php include "fileupload.php";?>
+</div>
+</div>
 
 
 
-for($p = 0; $p < count($documents); $p++) { ?>
+<?php for($p = 0; $p < count($documents); $p++) { ?>
 
-<div class="feed-files">
+<div class="feed-files container" style="padding-bottom: 7%;">
     <div class="pdf-image">
-        <h1><? echo $documents[$p]["title"] ?></h1>
+        <h1><?php echo $documents[$p]["title"] ?></h1>
         <img class="pdf-image" src="../images/static-images/pdf.png"></div>
     <div class="pdf-description">
-        <? echo $documents[$p]["description"] ?>
-        <p><? echo $documents[$p]["subject_id"] ?></p><a href="?download=<?php echo $documents[$p]["id"]?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Anzeigen</a>   <a href="?delete=<?php echo $documents[$p]["id"] ?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Löschen</a>
+        <?php echo $documents[$p]["description"] ?>
+        <p><?php echo $documents[$p]["subject_id"] ?></p><a href="?download=<?php echo $documents[$p]["id"]?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Anzeigen</a>   <a href="?delete=<?php echo $documents[$p]["id"] ?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Löschen</a>
     </div>
-</div>        
-<? } ?>
+</div>
+<?php } ?>
+<footer class="d-flex justify-content-end footer-basic" id="my-footer">
+        <ul class="list-inline" style="background: #fe5f55;margin-top: 22px;margin-right: 30px;padding-right: 10px;padding-left: 10px;border-top-left-radius: 35px;border-top-right-radius: 35px;font-size: 24px;color: rgb(255,255,255);">
+            <li class="list-inline-item"><a href="#">Impressum</a></li>
+            <li class="list-inline-item"><a href="#">FAQ</a></li>
+        </ul>
+    </footer>
+</div>
+
+    <script src="../javascript/login.js"></script>
+    <script src="../Javascript/jquery.min.js"></script>
+    <script src="../CSS/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

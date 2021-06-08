@@ -40,7 +40,7 @@
                     {
                     echo '
                     <li class="nav-item">
-                    <a class="nav-link active" id="header-links" href="Components/mod.php">Review</a>
+                    <a class="nav-link active" id="header-links" href="./Components/mod.php">Review</a>
                     </li>';
                     }
                     ?>
@@ -48,7 +48,7 @@
                     <a class="nav-link active" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "Components/logout.php";} else {echo "Components/login.php";}?>" style="padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Logout";} else {echo "Anmelden";}?></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link d-inline-flex" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "#Profil";} else {echo "Components/signup.php";}?>" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
+                    <a class="nav-link d-inline-flex" id="header-links" href="<?php if(isset($_SESSION['user'])){echo "Components/profilesettings.php";} else {echo "Components/signup.php";}?>" style="background: #fe5f55;border-radius: 16px;padding: 8px;"><?php if(isset($_SESSION['user'])){echo "Profil";} else {echo "Registrieren";}?></a>
                     </li>
                 </ul>
             </div>
@@ -148,7 +148,6 @@
     <script src="Javascript/jquery.min.js"></script>
     <script src="CSS/bootstrap/js/bootstrap.min.js"></script>
     <script src="Javascript/search.js"></script>
-    <?php include "components/profilesettings.php";?> <!-- debugging purposes -->
 
 </body>
 

@@ -1,4 +1,4 @@
-<div id="fileupload" class="col-md-12">
+<div id="fileupload" class="col-12" style="margin-bottom: 60px;">
     <h2>Unterlagen einreichen</h2>
     <hr>
     <form method="POST" action="../AJAX/upload.php" enctype="multipart/form-data">
