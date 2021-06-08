@@ -28,6 +28,10 @@ if (isset($_SESSION['user'])) {
     $user = $userObj->getUser($user_id);
     $documents = $userObj->getUserDocuments($user_id);
 }
+else
+{
+    header("location: ../"); 
+}
 
 if(isset($_POST["editSubmit"])) {
     $userObj->updateUser($_GET["id"], $_POST["email"], $_POST["username"], $_POST["firstname"], $_POST["lastname"]);
