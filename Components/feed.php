@@ -1,3 +1,10 @@
+<?php
+if(!isset($_SESSION['user']))
+{
+    header('Location: ../');
+}
+?>
+
 <div class="container" style="padding-bottom: 80px;padding-top: 20px;">
     <div class="row">
         <div class="col-md-8">

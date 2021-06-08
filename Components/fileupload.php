@@ -1,3 +1,10 @@
+<?php
+if(!isset($_SESSION['user']))
+{
+    header('Location: ../');
+}
+?>
+
 <div id="fileupload" class="col-12" style="margin-bottom: 60px;">
     <h2>Unterlagen einreichen</h2>
     <hr>

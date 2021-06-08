@@ -143,13 +143,17 @@ if(isset($_GET["download"])){
 
 <?php for($p = 0; $p < count($documents); $p++) { ?>
 
-<div class="feed-files container" style="padding-bottom: 7%;">
-    <div class="pdf-image">
-        <h1><?php echo $documents[$p]["title"] ?></h1>
+<div class="container" <?php if($p == count($documents)-1){echo 'style="padding-bottom: 20%;"';}else{echo'style="padding-bottom: 15px;"';}?>>
+    <div class="row">
+    <div class="col-12 d-flex justify-content-center" ><h1><?php echo $documents[$p]["title"] ?></h1></div>
+    <div class="col-12 d-flex justify-content-center">
+    <div class="pdf-image col-3 d-flex justify-content-end">
         <img class="pdf-image" src="../images/static-images/pdf.png"></div>
-    <div class="pdf-description">
+    <div class="pdf-description col-4">
         <?php echo $documents[$p]["description"] ?>
         <p><?php echo $documents[$p]["subject_id"] ?></p><a href="?download=<?php echo $documents[$p]["id"]?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Anzeigen</a>   <a href="?delete=<?php echo $documents[$p]["id"] ?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Löschen</a>
+    </div>
+    </div>
     </div>
 </div>
 <?php } ?>
