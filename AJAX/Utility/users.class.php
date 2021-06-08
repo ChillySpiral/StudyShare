@@ -66,5 +66,43 @@ class user extends Db
 
         return $result;
     }
+
+    public function getSubscriptionDate($user_id)
+    {
+        $sql = ("SELECT subscription_expires_at FROM users WHERE id = ?");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$user_id]);
+        $result = $stmt->fetch();
+
+        return $result["subscription_expires_at"];
+    }
+
+    public function setSubscriptionDate($user_id, $timestamp)
+    {
+        $sql = ("UPDATE users SET subscription_expires_at = ? WHERE id = ?");
+        $stmt = $this->connect()->prepare($sql);
+        $result = $stmt->execute([$timestamp, $user_id]);
+
+        return $result;
+    }
+
+    public function isActiveSubscriber($user_id) //needs timestamp functions.. gives back bool if user has a active subscription or not.
+    {
+
+    }
+
+    public function getUserDocuments($user_id){
+        $sql = ("SELECT * FROM documents WHERE user_id = ?");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$user_id]);
+        $result = $stmt->fetchAll();
+ 
+        return $result;
+    }
 }
+
+//$userDebug = new user();
+//$userDebug->setSubscription(2, "2021-06-30 20:15:00");
+//echo $userDebug->getSubscription(2);
+//var_dump($userDebug->getUserDocuments(2));
 ?>
