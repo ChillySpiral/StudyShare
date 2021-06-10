@@ -95,9 +95,9 @@ if(isset($_GET["download"])){
     <hr>
     <!--Profilbild -->
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 d-flex justify-content-center"><img src="../images/static-images/profilepicture-placeholder.jpg" id="profile-pic"/></div>
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8 d-flex justify-content-center"><img src="../images/static-images/profilepicture-placeholder.jpg" id="profile-pic"/></div>
+        <div class="col-md-2"></div>
     </div>
     <br>
     <?php
