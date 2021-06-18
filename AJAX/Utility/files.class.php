@@ -88,12 +88,37 @@ class files extends Db
         ON documents.user_id = users.id
         LEFT JOIN subjects
         ON documents.subject_id = subjects.id
-        WHERE documents.Review = '1' AND (documents.title LIKE '%$text%' OR documents.description LIKE '%$text%')");
+        WHERE documents.Review = '1' AND (documents.title LIKE '%$text%' OR documents.description LIKE '%$text%') ORDER BY documents.id DESC");
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
 
         $results = $stmt->fetchAll();
         return $results;
+    }
+
+    public function getCategories()
+    {
+        $sql=("SELECT * FROM subjects");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll();
+        return $results;
+    }
+
+    public function getAllDocuments()
+    {
+        $sql = ("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename FROM documents 
+        LEFT JOIN users 
+        ON documents.user_id = users.id
+        LEFT JOIN subjects
+        ON documents.subject_id = subjects.id
+        WHERE documents.Review = '1' ORDER BY documents.id DESC");
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll();
+        return $results; 
     }
 }
 

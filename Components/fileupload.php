@@ -19,14 +19,8 @@ if(!isset($_SESSION['user']))
         <div class="form-group">
             <textarea class="form-control" name="description" placeholder="Beschreibung" rows="10"></textarea>
         </div>
-        <select name="category" class="form-control">
-                    <optgroup label="Kategorie auswählen"> 
-                        <option value="1" selected="">General</option>
-                        <option value="2">Informatik</option>
-                        <option value="3">Mathematik</option>
-                        <option value="4">Englisch</option>
-                        <option value="5">Geografie</option>
-                        <option value="6">Geschichte</option>
+        <select name="category" class="form-control" >
+                    <optgroup label="Kategorie auswählen" id="uploadCategories"> 
                     </optgroup>
                 </select>
         <br><button class="btn btn-primary" name="upload" style="background: #fe5f55;border-radius: 15px;" type="submit">Einreichen</button>

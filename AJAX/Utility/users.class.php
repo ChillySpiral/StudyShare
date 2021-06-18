@@ -92,7 +92,7 @@ class user extends Db
     }
 
     public function getUserDocuments($user_id){
-        $sql = ("SELECT * FROM documents WHERE user_id = ?");
+        $sql = ("SELECT * FROM documents WHERE user_id = ? ORDER BY id DESC");
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$user_id]);
         $result = $stmt->fetchAll();

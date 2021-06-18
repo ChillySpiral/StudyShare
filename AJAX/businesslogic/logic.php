@@ -108,6 +108,12 @@ class SimpleLogic
                 $text = array_pop($paramArray);
                 $res = $this->file_con->getSearch($text);
                 break;
+            case 'categories':
+                $res = $this->file_con->getCategories();
+                break;
+            case 'AllDocs':
+                $res = $this->file_con->getAllDocuments();
+                break;
         }
         return $res;
     }

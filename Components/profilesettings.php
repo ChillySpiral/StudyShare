@@ -165,7 +165,7 @@ if(isset($_GET["download"])){
     </footer>
 </div>
 
-    <script src="../javascript/login.js"></script>
+    <script src="../javascript/profile.js"></script>
     <script src="../Javascript/jquery.min.js"></script>
     <script src="../CSS/bootstrap/js/bootstrap.min.js"></script>
 
