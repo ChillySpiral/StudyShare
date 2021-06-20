@@ -30,28 +30,25 @@
         <div class="row">
             <div class="col-md-4">
                 <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
-                    <h1>Option 1</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
-                    <h1>Info</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
+                    <h1>1-Monat</h1>
+                    <p>Du möchtest kurzseitig auf gewisse Unterlagen zugreifen? Kein Problem! Dieses Abonnement ermöglicht dir aber auch die Option, deine eigenen Mitschriften hochzuladen. Support-Priorisierung fällt bei diesem Angebot.</p>
+                    <h2>14,99€</h2>
                     <input type="radio" name="subscription" value="option1">
                 </div>
             </div>
             <div class="col-md-4">
                 <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-bottom: 5px;margin-top: 5px; border-color: gold;">
-                    <h1>Option 2</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
-                    <h1>Info</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
+                    <h1>PREMIUM</h1>
+                    <p>Du möchtest dein komplettes Studium nur sehr gute Leistungen hinterlegen und tägliche Lernroutinen vollausgestattet ausführen? Schließe ein Jahresabonnement bei uns ab & genieße deine Support-Priorisierung!</p>
+                    <h1>99,99€</h1>
                     <input type="radio" name="subscription" value="option2">
                 </div>
             </div>
             <div class="col-md-4">
                 <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
-                    <h1>Option 3</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
-                    <h1>Info</h1>
-                    <p style="text-align: center;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
+                    <h1>3-Monate</h1>
+                    <p>Du möchtest die Prüfungsphase vorbereitet starten? Mit diesem 3-MonateAbonnement vermeidest du den Stress in der Prüfungsphase, indem du rechtzeitig auf alle Unterlagen zugreifst und keine Informationen übersiehst!</p>
+                    <h1>34,99€</h1>
                     <input type="radio" name="subscription" value="option3">
                 </div>
             </div>

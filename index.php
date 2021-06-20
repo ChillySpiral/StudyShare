@@ -58,7 +58,9 @@
     { echo '
     <div class="background container-fluid" style="padding-right: 25%;padding-left: 25%; padding-top: 15%;">
             <div style="background: rgba(118,118,118,0.27);color: rgb(255,255,255);border-radius: 25px; padding: 8px;">
-                <p style="font-size: 17px;text-align: center;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
+                <p style="font-size: 25px; text-align: center; font-weight: bolder;">Lernunterlagen in guter Qualität!</p>      
+                <p style="font-size: 25px; text-align: center; font-weight: bolder;">Geld mit deinen eigenen Mitschriften verdienen!</p>
+                <p style="font-size: 25px; text-align: center; font-weight: bolder;">Mit StudyShare ist alles möglich!</p>    
             </div>
     </div>
 
@@ -74,9 +76,9 @@
             <div class="col-md-12">
                 <div class="bubble-left">
                     <div class="bubble-content-left">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
-                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea…
+                        Ich bin schon im vorletzten Semester meines Informatik-Studiums und habe währenddessen durch meine ganzen Mitschriften
+                        sehr viel Geld gemacht! Aufgrund der geringfügigen Basis war das ein unkompliziertes passives Einkommen! 
+                        Normalerweise opfert man bei einem Nebenjob wichtige Lerntage, aber durch StudyShare löst man direkt das Problem!
                     </div>
                 </div>
             </div>
@@ -85,9 +87,9 @@
             <div class="col-md-12">
                 <div class="bubble-right">
                     <div class="bubble-content-right">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
-                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea…
+                        Über StudyShare habe ich Zugriff auf sogut wie allmögliche Mitschriften, die ich für meine Prüfungen brauche!
+                        Selbst bei meinem Studiengangswechsel gab es aufgrund der hohen Vielfalt immer noch ausreichend Unterlagen und ich war
+                        mit meinen sehr guten Noten immer die beste! Nie mehr wieder 4 gewinnt!
                     </div>
                 </div>
             </div>
@@ -105,26 +107,26 @@
         <div class="row">
             <div class="col-md-4">
                 <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
-                    <h1>Option 1</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
-                    <h1>Info</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p><button class="btn btn-primary" type="button" style="background: #fe5f55;border-top-left-radius: 15px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;">Kaufen</button>
+                    <h1>1-Monat</h1>
+                    <p>Du möchtest kurzseitig auf gewisse Unterlagen zugreifen? Kein Problem! Dieses Abonnement ermöglicht dir aber auch die Option, deine eigenen Mitschriften hochzuladen. Support-Priorisierung fällt bei diesem Angebot.</p>
+                    <h2>14,99€</h2>
+                    <button class="btn btn-primary" type="button" style="background: #fe5f55;border-top-left-radius: 15px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;">Kaufen</button>
                 </div>
             </div>
             <div class="col-md-4">
                 <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-bottom: 5px;margin-top: 5px;">
-                    <h1>Option 2</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
-                    <h1>Info</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p><button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button>
+                    <h1>PREMIUM</h1>
+                    <p>Du möchtest dein komplettes Studium nur sehr gute Leistungen hinterlegen und tägliche Lernroutinen vollausgestattet ausführen? Schließe ein Jahresabonnement bei uns ab & genieße deine Support-Priorisierung!</p>
+                    <h2>99,99€</h2>
+                    <button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button>
                 </div>
             </div>
             <div class="col-md-4">
                 <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
-                    <h1>Option 3</h1>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
-                    <h1>Info</h1>
-                    <p style="text-align: center;">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p><button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button>
+                    <h1>3-Monate</h1>
+                    <p>Du möchtest die Prüfungsphase vorbereitet starten? Mit diesem 3-MonateAbonnement vermeidest du den Stress in der Prüfungsphase, indem du rechtzeitig auf alle Unterlagen zugreifst und keine Informationen übersiehst!</p>
+                    <h2>34,99€</h2>
+                    <button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button>
                 </div>
             </div>
         </div>
