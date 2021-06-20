@@ -57,17 +57,21 @@
 
     <button class="accordion">Wie funktioniert das Abonnement-Service?</button>
         <div class="panel">
-            <p>Das Abo ist in drei flexiblen Varianten verfügbar, ein Monat, ein Semester oder lebenslang. Genauere Infos finden Sie auf der Startseite.</p>
+            <p>Das Abo ist in drei flexiblen Varianten verfügbar, ein Monat, drei Monate oder ein Jahr. Genauere Infos finden Sie auf der Startseite.</p>
         </div>
-        <button class="accordion">Ich habe Probleme beim herunterladen von einem Dokument, was kann ich tun?</button>
+    <button class="accordion">Wie schließe ich ein Abo ab?</button>
+        <div class="panel">
+            <p>Über Ihr Profil können Sie ganz bequem ein Abo abschließen (Regestrierung erforderlich).</p>
+        </div>
+    <button class="accordion">Ich habe Probleme beim herunterladen von einem Dokument, was kann ich tun?</button>
         <div class="panel">
             <p>Kontaktieren Sie unseren Support unter team@studyshare.at mit einer genauen Beschreibung ihres Problems (Korrupte Datei, Download nicht möglich, keine Datei vorhanden) und wir werden eine Lösung finden.</p>
         </div>
-        <button class="accordion">Mein Dokument wurde ohne meinem Einverständnis veröffentlicht, an wen kann ich mich diesbezüglich wenden?</button>
+    <button class="accordion">Mein Dokument wurde ohne meinem Einverständnis veröffentlicht, an wen kann ich mich diesbezüglich wenden?</button>
         <div class="panel">
             <p>Bitte senden Sie uns eine Mail an team@studyshare.at mit dem Titel + Veröffentlichkeitsdatum des betroffenen Dokuments. Ein Moderator wird das Dokument erneut überprüfen auf Authentizität und Sie schnellstmöglich kontaktieren.</p>
         </div>
-        <button class="accordion">Wie viel kann ich mit Studyshare verdienen?</button>
+    <button class="accordion">Wie viel kann ich mit Studyshare verdienen?</button>
         <div class="panel">
             <p>Derzeit arbeiten wir noch an einem geeigneten System.</p>
         </div>
