@@ -24,17 +24,6 @@
             <div class="collapse navbar-collapse justify-content-end" id="navcol-1" style="color: rgb(255,255,255);">
             </form>
                 <ul class="navbar-nav">
-                <?php if(isset($_SESSION['user']))
-                { echo '
-                    <li class="nav-item" style="min-height: 40px;">
-                    <form id="Search_Form" class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" style="display: inline-block !important;">
-                        <div class="input-group">
-                            <input name="Search_Text" type="text" class="bg-light form-control border-0 small" placeholder="Suche Notizen, Zusammenfassungen & Mitschriften" style="border-top-left-radius: 15px;border-bottom-left-radius: 15px;" />
-                        <div class="input-group-append">
-                            <button id="Search_Button" type="button" class="btn py-0" type="button" style="border-top-right-radius: 15px;border-bottom-right-radius: 15px;background: rgb(248,249,252);border-width: 1px;"><i class="fas fa-search" style="color: rgb(0,0,0);"></i></button></div>
-                        </div>
-                    </from>
-                    </li>';}?>
                     <?php
                     if(isset($_SESSION['mod']))
                     {
