@@ -55,7 +55,8 @@
         </div>
     </nav>
 <div class="container" style="padding-bottom: 50px;">
-    <div class="imprint">
+<div class="row">
+<div class="col">
 <h1 class="adsimple-121765320">Impressum</h1>
 <p class="adsimple-121765320">Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut §25 Mediengesetz.</p>
 <p class="adsimple-121765320">StudyShare GmbH<br />Bergheidengasse 16, <br />1130 Wien, <br />Österreich</p>
@@ -224,6 +225,7 @@ Mehr Details dazu finden Sie beim jeweils eingesetzten Zahlungsanbieter-Tool.<br
 <p>Wir nutzen auf unserer Website den Online-Bezahldienst PayPal. Dienstanbieter ist das amerikanische Unternehmen PayPal Inc. Für den europäischen Raum ist das Unternehmen PayPal Europe (S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg) verantwortlich. Mehr über die Daten, die durch die Verwendung von PayPal verarbeitet werden, erfahren Sie in der Privacy Policy auf <u>
 <a class="adsimple-121765320" href="https://www.paypal.com/de/webapps/mpp/ua/privacy-full">https://www.paypal.com/de/webapps/mpp/ua/privacy-full</a>.</u>
 </p>
+</div>
 </div>
 </div>
     <footer class="d-flex justify-content-end footer-basic" id="my-footer">
