@@ -142,7 +142,7 @@ if(isset($_GET["download"])){
 
 
 <?php for($p = 0; $p < count($documents); $p++) { ?>
-
+<hr class="feed-documents">
 <div class="container" <?php if($p == count($documents)-1){echo 'style="padding-bottom: 20%;"';}else{echo'style="padding-bottom: 15px;"';}?>>
     <div class="row">
     <div class="col-12 d-flex justify-content-center" ><h1><?php echo $documents[$p]["title"] ?></h1></div>
