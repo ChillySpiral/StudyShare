@@ -69,6 +69,7 @@
 </html>
 
 <?php
+    session_start();
     require_once('../AJAX/Utility/users.class.php');
     $user = new user();
 
@@ -77,9 +78,8 @@
 
 
         $date = date_create();
-        $subscriber_id = $user->getUserID("user"); //MUSS NOCH GEGEN SESSION ERSETZT WERDEN, aktuell nur statischer Wert
+        $subscriber_id = $_SESSION['user'];
         $previous_subscription = date_create($user->getSubscriptionDate($subscriber_id));
-        //echo $_SESSION['user'];
 
         if($param == "option1"){
             if($previous_subscription < $date){
