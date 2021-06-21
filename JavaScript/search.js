@@ -7,12 +7,10 @@ $(document).ready(function(){
         if (e.keyCode == 13) {
             e.preventDefault();
             sendData();
-            $("form").trigger("reset"); 
         }
     });
     $("#Search_Button").on("click", function(){
         sendData();
-        $("form").trigger("reset");     //Resets the form after pressing submit
     })
 })
 
