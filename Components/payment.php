@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <script src="./JavaScript/payment.js" defer></script>
-    <script src="./JavaScript/jquery.min.js"></script>
-    <script src="./CSS/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../JavaScript/payment.js" defer></script>
+    <script src="../JavaScript/jquery.min.js"></script>
+    <script src="../CSS/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../CSS/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/Footer-Basic.css">
