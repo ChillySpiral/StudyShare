@@ -86,9 +86,16 @@ class user extends Db
         return $result;
     }
 
-    public function isActiveSubscriber($user_id) //needs timestamp functions.. gives back bool if user has a active subscription or not.
+    public function isActiveSubscriber($user_id) //gives back bool if user has a active subscription or not.
     {
+        $tmp = $this->getSubscriptionDate($user_id);
+        $tmpDateObj = date_create($tmp);
+        $date = date_create();
 
+        if($tmpDateObj > $date)
+            return true;
+        else
+            return false;
     }
 
     public function getUserDocuments($user_id){
@@ -101,12 +108,12 @@ class user extends Db
     }
 }
 
-/* $userDebug = new user();
+//$userDebug = new user();
 //$userDebug->setSubscription(2, "2021-06-30 20:15:00");
 //echo $userDebug->getSubscription(2);
 //var_dump($userDebug->getUserDocuments(2));
 
-$date = date_create();
+//$date = date_create();
 //$date->modify('next month');
 //$tmp = $date->format('Y-m-d H:i:s');
 //echo $tmp;
@@ -116,9 +123,7 @@ $date = date_create();
 //$userdate = date_create($userDebug->getSubscriptionDate(2));
 //var_dump($userdate);
 
+//$bool = $userDebug->isActiveSubscriber(5);
+//var_dump($bool);
 
-        if(date_create($userDebug->getSubscriptionDate(2)) > $date)
-            echo "not expired!";
-        else
-            echo "expired!"; */
 ?>
