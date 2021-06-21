@@ -58,7 +58,7 @@
             <input type="checkbox" id="myCheck"> Hiermit akzeptiere ich die AGB           
         <br>
         <br>
-            <input class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;" type="button" onclick="checkForm()" value="Bezahlen">
+            <input class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;" type="submit" onclick="checkForm()" value="Bezahlen">
         <br>
         <br>
        
@@ -69,24 +69,61 @@
 </html>
 
 <?php
-    /* $date = date_create();
-    if(isset())
-    $param = $_POST["subscription"];
+    require_once('../AJAX/Utility/users.class.php');
+    $user = new user();
 
-    if($param == "option1"){
-        if(date_create($user->getSubscriptionDate) < $date){
-            //subscription expired, add 1 month to current timestamp
-        }else{
-            //user has active subscription, add 1 month to existing timestamp from DB 
+    if(isset($_POST["subscription"])){
+        $param = $_POST["subscription"];
+
+
+        $date = date_create();
+        $subscriber_id = $user->getUserID("user"); //MUSS NOCH GEGEN SESSION ERSETZT WERDEN, aktuell nur statischer Wert
+        $previous_subscription = date_create($user->getSubscriptionDate($subscriber_id));
+        //echo $_SESSION['user'];
+
+        if($param == "option1"){
+            if($previous_subscription < $date){
+                //subscription expired, add 1 month to current timestamp
+                $date->modify('next month');
+                $tmp = $date->format('Y-m-d H:i:s');
+                echo $tmp;
+                $user->setSubscriptionDate($subscriber_id, $tmp);
+            }else{
+                //user has active subscription, add 1 month to existing timestamp from DB
+                $previous_subscription->modify('next month');
+                $tmp = $previous_subscription->format('Y-m-d H:i:s');
+                echo $tmp;
+                $user->setSubscriptionDate($subscriber_id, $tmp);
+            }
+        }
+        else if($param == "option2"){
+            if($previous_subscription < $date){
+                //subscription expired, add 1 year to current timestamp
+                $date->modify('next year');
+                $tmp = $date->format('Y-m-d H:i:s');
+                $user->setSubscriptionDate($subscriber_id, $tmp);
+            }else{
+                //user has active subscription, add 1 year to existing timestamp from DB
+                $previous_subscription->modify('next year');
+                $tmp = $previous_subscription->format('Y-m-d H:i:s');
+                $user->setSubscriptionDate($subscriber_id, $tmp);
+            }
+        }
+        else if($param == "option3"){
+            if($previous_subscription < $date){
+                //subscription expired, add 3 months to current timestamp
+                $date->modify('+3 months');
+                $tmp = $date->format('Y-m-d H:i:s');
+                $user->setSubscriptionDate($subscriber_id, $tmp);
+            }else{
+                //user has active subscription, add 3 months to existing timestamp from DB
+                $previous_subscription->modify('+3 months');
+                $tmp = $previous_subscription->format('Y-m-d H:i:s');
+                $user->setSubscriptionDate($subscriber_id, $tmp);
+            }
+        }
+        else{
+            //error?
         }
     }
-    else if($param == "option2"){
-        //same as above, just add 3 months
-    }
-    else if($param == "option3"){
-        //same here, just add 12 months / 1 year
-    }
-    else{
-        //error?
-    } */
 ?>

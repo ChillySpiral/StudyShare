@@ -30,7 +30,7 @@ class user extends Db
         $stmt->execute([$username]);
         $result = $stmt->fetch();
 
-        return $result;
+        return $result['id'];
     }
 
     public function updateUser($id, $email, $username, $firstname, $lastname) { //updated Userdaten, wird für das bearbeiten benötigt
@@ -101,8 +101,24 @@ class user extends Db
     }
 }
 
-//$userDebug = new user();
+/* $userDebug = new user();
 //$userDebug->setSubscription(2, "2021-06-30 20:15:00");
 //echo $userDebug->getSubscription(2);
 //var_dump($userDebug->getUserDocuments(2));
+
+$date = date_create();
+//$date->modify('next month');
+//$tmp = $date->format('Y-m-d H:i:s');
+//echo $tmp;
+//$date->modify('+3 months');
+//$date->modify('next year');
+//var_dump($date);
+//$userdate = date_create($userDebug->getSubscriptionDate(2));
+//var_dump($userdate);
+
+
+        if(date_create($userDebug->getSubscriptionDate(2)) > $date)
+            echo "not expired!";
+        else
+            echo "expired!"; */
 ?>
