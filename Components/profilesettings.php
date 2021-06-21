@@ -142,7 +142,7 @@ if(isset($_GET["download"])){
 
 
 <?php for($p = 0; $p < count($documents); $p++) { ?>
-
+<hr class="feed-documents">
 <div class="container" <?php if($p == count($documents)-1){echo 'style="padding-bottom: 20%;"';}else{echo'style="padding-bottom: 15px;"';}?>>
     <div class="row">
     <div class="col-12 d-flex justify-content-center" ><h1><?php echo $documents[$p]["title"] ?></h1></div>
@@ -159,8 +159,8 @@ if(isset($_GET["download"])){
 <?php } ?>
 <footer class="d-flex justify-content-end footer-basic" id="my-footer">
         <ul class="list-inline" style="background: #fe5f55;margin-top: 22px;margin-right: 30px;padding-right: 10px;padding-left: 10px;border-top-left-radius: 35px;border-top-right-radius: 35px;font-size: 24px;color: rgb(255,255,255);">
-            <li class="list-inline-item"><a href="#">Impressum</a></li>
-            <li class="list-inline-item"><a href="#">FAQ</a></li>
+            <li class="list-inline-item"><a href="../impressum.php">Impressum</a></li>
+            <li class="list-inline-item"><a href="../faq.php">FAQ</a></li>
         </ul>
     </footer>
 </div>

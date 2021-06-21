@@ -8,7 +8,7 @@ if(!isset($_SESSION['user']))
 <div class="container" style="padding-bottom: 80px;padding-top: 20px;">
     <div class="row">
         <div class="col-md-8">
-            <div id="Search_Results" style="height: 100%;border-radius: 20px;border-width: 1px;border-style: solid;">
+            <div id="Search_Results" style="height: 100%;">
 
         </div>
         </div>

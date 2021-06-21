@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 11. Apr 2021 um 20:46
+-- Erstellungszeit: 21. Jun 2021 um 15:46
 -- Server-Version: 10.4.14-MariaDB
 -- PHP-Version: 7.4.10
 
@@ -37,6 +37,15 @@ CREATE TABLE `documents` (
   `filename` varchar(256) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `documents`
+--
+
+INSERT INTO `documents` (`id`, `user_id`, `subject_id`, `title`, `description`, `Review`, `filename`, `created_at`) VALUES
+(2, 2, 1, 'hello', 'test', b'1', 'architecture_studyshare_group7.pdf', '2021-05-18 11:26:04'),
+(4, 1, 1, 'asdf', 'asdfasdf', b'1', 'Bewerbung_Denk.pdf', '2021-06-07 11:19:40'),
+(7, 5, 0, 'Test', '', b'1', 'ANGABEN_6-11.pdf', '2021-06-21 11:21:42');
 
 -- --------------------------------------------------------
 
@@ -86,8 +95,20 @@ CREATE TABLE `users` (
   `lastname` varchar(64) DEFAULT NULL,
   `password` varchar(64) NOT NULL,
   `is_admin` bit(1) NOT NULL DEFAULT b'0',
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `subscription_expires_at` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `firstname`, `lastname`, `password`, `is_admin`, `created_at`, `subscription_expires_at`) VALUES
+(1, 'DenkLa', 'laurell@gmx.at', 'Laurell', 'Denk', '$2y$10$EMXfMA2uxx1xwTxbpv7oI.eWp948uaEAUS0/9jjhNtIdKsOVp7jui', b'1', '2021-05-17 18:45:08', ''),
+(2, 'novalis', 'ibrahim@adouni.dev', 'Ibrahim', 'Adouni', '$2y$10$eYI5b50pF4V65hdrNwwEMOILtGatqyONiHTosPlHzEFj67rd6xY12', b'1', '2021-05-18 11:23:47', '2021-06-30 20:15:00'),
+(3, 'laurell', 'Laurell@gmx.at', 'Laurell', 'Denk', '$2y$10$iM/ldMEgR6SFy/HuorQvz.CZZKQGUZ4onhvt7MR4AofnnUpZJ4/0K', b'1', '2021-06-04 12:22:25', '2022-06-21 11:20:33'),
+(4, 'asdfasdf', 'asdf@aasd.at', 'asdfasdf', 'asdfasdf', '$2y$10$lamgwk7zkLvqGwKN2afVnO1Lcix69vp.Mrt9fsWkSswCwlVrMmvSa', b'1', '2021-06-07 10:32:56', '2021-10-21 11:19:21'),
+(5, 'user', 'muster@mail.com', 'Maxi', 'Musteruser', '$2y$10$bar3lCuP8zQX7fTpAw68lOJgq5gm3p/siF3Lfumqzl8yW10y4EH5e', b'1', '2021-06-07 10:32:59', '2021-08-21 11:18:43');
 
 --
 -- Indizes der exportierten Tabellen
@@ -128,13 +149,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints der exportierten Tabellen
