@@ -83,7 +83,7 @@ class files extends Db
 
     public function getSearch($text)
     {
-        $sql=("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename FROM documents 
+        $sql=("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename, documents.subject_id FROM documents 
         LEFT JOIN users 
         ON documents.user_id = users.id
         LEFT JOIN subjects
@@ -108,7 +108,7 @@ class files extends Db
 
     public function getAllDocuments()
     {
-        $sql = ("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename FROM documents 
+        $sql = ("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename, documents.subject_id FROM documents 
         LEFT JOIN users 
         ON documents.user_id = users.id
         LEFT JOIN subjects
