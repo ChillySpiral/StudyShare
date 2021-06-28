@@ -91,7 +91,7 @@ class user extends Db
         $tmp = $this->getSubscriptionDate($user_id);
         $tmpDateObj = date_create($tmp);
         $date = date_create();
-
+        
         if($tmpDateObj > $date)
             return true;
         else

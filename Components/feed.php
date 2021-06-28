@@ -1,7 +1,20 @@
 <?php
+require_once('AJAX/Utility/users.class.php');
+$user = new user();
+
+
+
 if(!isset($_SESSION['user']))
 {
     header('Location: ../');
+}
+
+$subscriber_id = $_SESSION['user'];
+
+$isActiveUser = $user->isActiveSubscriber($subscriber_id);
+
+if(!$isActiveUser){
+    header('Location: Components/profilesettings.php');
 }
 ?>
 

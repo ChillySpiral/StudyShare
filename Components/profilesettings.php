@@ -134,8 +134,17 @@ if(isset($_GET["download"])){
 
 <div class="container">
 <div class="row">
+<?php
+$isActiveUser = $userObj->isActiveSubscriber($user_id);
 
-<?php include "fileupload.php";?>
+if($isActiveUser){
+    include "fileupload.php";
+}
+else if(!$isActiveUser){
+    include "payment.php";
+}
+?>
+
 </div>
 </div>
 

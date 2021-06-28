@@ -69,13 +69,11 @@
 </html>
 
 <?php
-    session_start();
     require_once('../AJAX/Utility/users.class.php');
     $user = new user();
 
     if(isset($_POST["subscription"])){
         $param = $_POST["subscription"];
-
 
         $date = date_create();
         $subscriber_id = $_SESSION['user'];
