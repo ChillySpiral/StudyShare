@@ -110,7 +110,7 @@
                     <h1>1-Monat</h1>
                     <p>Du möchtest kurzseitig auf gewisse Unterlagen zugreifen? Kein Problem! Dieses Abonnement ermöglicht dir aber auch die Option, deine eigenen Mitschriften hochzuladen. Support-Priorisierung fällt bei diesem Angebot.</p>
                     <h2>14,99€</h2>
-                    <button class="btn btn-primary" type="button" style="background: #fe5f55;border-top-left-radius: 15px;border-top-right-radius: 15px;border-bottom-right-radius: 15px;border-bottom-left-radius: 15px;">Kaufen</button>
+                    <a href="Components/signup.php"><button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button></a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -118,7 +118,7 @@
                     <h1>PREMIUM</h1>
                     <p>Du möchtest dein komplettes Studium nur sehr gute Leistungen hinterlegen und tägliche Lernroutinen vollausgestattet ausführen? Schließe ein Jahresabonnement bei uns ab & genieße deine Support-Priorisierung!</p>
                     <h2>99,99€</h2>
-                    <button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button>
+                    <a href="Components/signup.php"><button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button></a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -126,7 +126,7 @@
                     <h1>3-Monate</h1>
                     <p>Du möchtest die Prüfungsphase vorbereitet starten? Mit diesem 3-MonateAbonnement vermeidest du den Stress in der Prüfungsphase, indem du rechtzeitig auf alle Unterlagen zugreifst und keine Informationen übersiehst!</p>
                     <h2>34,99€</h2>
-                    <button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button>
+                    <a href="Components/signup.php"><button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button></a>
                 </div>
             </div>
         </div>
