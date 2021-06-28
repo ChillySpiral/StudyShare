@@ -43,6 +43,56 @@ if(isset($_GET["delete"])){
     $fileObj->modDelete($_GET["delete"]);
     unlink("../AJAX/uploads/".$filename['filename']."");
     header('Location: ./Profilesettings.php');
+}
+if(isset($_POST["subscription"])){
+    $param = $_POST["subscription"];
+
+    $date = date_create();
+    $subscriber_id = $_SESSION['user'];
+    $previous_subscription = date_create($userObj->getSubscriptionDate($subscriber_id));
+
+    if($param == "option1"){
+        if($previous_subscription < $date){
+            //subscription expired, add 1 month to current timestamp
+            $date->modify('next month');
+            $tmp = $date->format('Y-m-d H:i:s');
+            $userObj->setSubscriptionDate($subscriber_id, $tmp);
+        }else{
+            //user has active subscription, add 1 month to existing timestamp from DB
+            $previous_subscription->modify('next month');
+            $tmp = $previous_subscription->format('Y-m-d H:i:s');
+            $userObj->setSubscriptionDate($subscriber_id, $tmp);
+        }
+    }
+    else if($param == "option2"){
+        if($previous_subscription < $date){
+            //subscription expired, add 1 year to current timestamp
+            $date->modify('next year');
+            $tmp = $date->format('Y-m-d H:i:s');
+            $userObj->setSubscriptionDate($subscriber_id, $tmp);
+        }else{
+            //user has active subscription, add 1 year to existing timestamp from DB
+            $previous_subscription->modify('next year');
+            $tmp = $previous_subscription->format('Y-m-d H:i:s');
+            $userObj->setSubscriptionDate($subscriber_id, $tmp);
+        }
+    }
+    else if($param == "option3"){
+        if($previous_subscription < $date){
+            //subscription expired, add 3 months to current timestamp
+            $date->modify('+3 months');
+            $tmp = $date->format('Y-m-d H:i:s');
+            $userObj->setSubscriptionDate($subscriber_id, $tmp);
+        }else{
+            //user has active subscription, add 3 months to existing timestamp from DB
+            $previous_subscription->modify('+3 months');
+            $tmp = $previous_subscription->format('Y-m-d H:i:s');
+            $userObj->setSubscriptionDate($subscriber_id, $tmp);
+        }
+    }
+    else{
+        //error?
+    }
 } 
 
 if(isset($_GET["download"])){
