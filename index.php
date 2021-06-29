@@ -77,7 +77,7 @@
                 <div class="bubble-left">
                     <div class="bubble-content-left">
                         Ich bin schon im vorletzten Semester meines Informatik-Studiums und habe währenddessen durch meine ganzen Mitschriften
-                        sehr viel Geld gemacht! Aufgrund der geringfügigen Basis war das ein unkompliziertes passives Einkommen! 
+                        sehr viel Geld gemacht! Es war ein unkompliziertes passives Einkommen! 
                         Normalerweise opfert man bei einem Nebenjob wichtige Lerntage, aber durch StudyShare löst man direkt das Problem!
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div class="bubble-content-right">
                         Über StudyShare habe ich Zugriff auf sogut wie allmögliche Mitschriften, die ich für meine Prüfungen brauche!
                         Selbst bei meinem Studiengangswechsel gab es aufgrund der hohen Vielfalt immer noch ausreichend Unterlagen und ich war
-                        mit meinen sehr guten Noten immer die beste! Nie mehr wieder 4 gewinnt!
+                        mit meinen sehr guten Noten immer die Beste! <br>Kein 4 gewinnt mehr!
                     </div>
                 </div>
             </div>
