@@ -77,7 +77,7 @@
                 <div class="bubble-left">
                     <div class="bubble-content-left">
                         Ich bin schon im vorletzten Semester meines Informatik-Studiums und habe währenddessen durch meine ganzen Mitschriften
-                        sehr viel Geld gemacht! Aufgrund der geringfügigen Basis war das ein unkompliziertes passives Einkommen! 
+                        sehr viel Geld gemacht! Es war ein unkompliziertes passives Einkommen! 
                         Normalerweise opfert man bei einem Nebenjob wichtige Lerntage, aber durch StudyShare löst man direkt das Problem!
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <div class="bubble-content-right">
                         Über StudyShare habe ich Zugriff auf sogut wie allmögliche Mitschriften, die ich für meine Prüfungen brauche!
                         Selbst bei meinem Studiengangswechsel gab es aufgrund der hohen Vielfalt immer noch ausreichend Unterlagen und ich war
-                        mit meinen sehr guten Noten immer die beste! Nie mehr wieder 4 gewinnt!
+                        mit meinen sehr guten Noten immer die Beste! <br>Kein 4 gewinnt mehr!
                     </div>
                 </div>
             </div>
@@ -108,13 +108,13 @@
             <div class="col-md-4">
                 <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
                     <h1>1-Monat</h1>
-                    <p>Du möchtest kurzseitig auf gewisse Unterlagen zugreifen? Kein Problem! Dieses Abonnement ermöglicht dir aber auch die Option, deine eigenen Mitschriften hochzuladen. Support-Priorisierung fällt bei diesem Angebot.</p>
+                    <p>Ausprobieren?<br> Kein Problem! Dieses Abonnement ermöglicht dir aber auch die Option, deine eigenen Mitschriften hochzuladen. Support-Priorisierung fehlt bei diesem Angebot.</p>
                     <h2>14,99€</h2>
                     <a href="Components/signup.php"><button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button></a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-bottom: 5px;margin-top: 5px;">
+                <div style="border-width: 3px;border-style: solid;border-color: gold;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-bottom: 5px;margin-top: 5px;">
                     <h1>PREMIUM</h1>
                     <p>Du möchtest dein komplettes Studium nur sehr gute Leistungen hinterlegen und tägliche Lernroutinen vollausgestattet ausführen? Schließe ein Jahresabonnement bei uns ab & genieße deine Support-Priorisierung!</p>
                     <h2>99,99€</h2>
@@ -124,7 +124,7 @@
             <div class="col-md-4">
                 <div style="border-width: 1px;border-style: solid;border-radius: 45px;margin-right: 30px;margin-left: 30px;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
                     <h1>3-Monate</h1>
-                    <p>Du möchtest die Prüfungsphase vorbereitet starten? Mit diesem 3-MonateAbonnement vermeidest du den Stress in der Prüfungsphase, indem du rechtzeitig auf alle Unterlagen zugreifst und keine Informationen übersiehst!</p>
+                    <p>Prüfungsphase?<br> Mit diesem 3-Monate Abonnement vermeidest du den Stress in der Prüfungsphase, indem du rechtzeitig auf alle Unterlagen zugreifst und keine Informationen übersiehst!</p>
                     <h2>34,99€</h2>
                     <a href="Components/signup.php"><button class="btn btn-primary" type="button" style="background: #fe5f55;border-radius: 15px;">Kaufen</button></a>
                 </div>
