@@ -1,7 +1,7 @@
 $(document).ready(function(){
     loadCategories();
 })
-
+//Sends an AJAX request to the Database and appends the subjects, making the first one the selected one
 function loadCategories()
 {
     $.ajax({

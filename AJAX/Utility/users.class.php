@@ -3,16 +3,16 @@ require_once('dbConnection.php');
 
 class user extends Db
 {
-
+    //Inserts a user and their info into the database
     public function createUser($username, $email, $firstname, $lastname, $password)
     {
         $sql = ("INSERT INTO users (username, email, firstname, lastname, password) VALUES (?,?,?,?,?)");
         $stmt = $this->connect()->prepare($sql);
-        $result = $stmt->execute([$username, $email, $firstname, $lastname, $password]); //Passwort Hash bei User dann hinzufügen
+        $result = $stmt->execute([$username, $email, $firstname, $lastname, $password]);
 
         return $result;
     }
-
+    //Returns user information based on their id
     public function getUser($user_id)
     {
         $sql = ("SELECT username, email, firstname, lastname FROM users WHERE id = ?");
@@ -22,7 +22,7 @@ class user extends Db
 
         return $result;
     }
-
+    //Returns a user id by the username
     public function getUserID($username)
     {
         $sql = ("SELECT id FROM users WHERE username = ?");
@@ -32,24 +32,24 @@ class user extends Db
 
         return $result['id'];
     }
-
-    public function updateUser($id, $email, $username, $firstname, $lastname) { //updated Userdaten, wird für das bearbeiten benötigt
+    //Updates a users information
+    public function updateUser($id, $email, $username, $firstname, $lastname) { 
         $sql = ("UPDATE users SET email = ?, username = ?, firstname = ?, lastname = ? WHERE id = $id");
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email, $username, $firstname, $lastname]);
     }
-
-    public function loginUser($email, $password) //Email Unique machen in der Datanbank
+    //Returns password and relevant user information to log the user in
+    public function loginUser($email, $password)
     {
         $sql = ("SELECT password, id, is_admin FROM users WHERE email = ?");
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email]);
         $result = $stmt->fetch();
 
-        return $result; //Passwort prüfen in der Datenbank Abfrage?
+        return $result;
     }
-
-    public function getPassword($user_id) //Zum Vergleichen bei Passwortänderung
+    //Returns the password by id
+    public function getPassword($user_id)
     {
         $sql = ("SELECT password FROM users WHERE id = ?");
         $stmt = $this->connect()->prepare($sql);
@@ -58,7 +58,8 @@ class user extends Db
 
         return $result;
     }
-    public function changePassword($user_id, $new_password) //Password Hash fehlt
+    //Changes the password
+    public function changePassword($user_id, $new_password)
     {
         $sql = ("UPDATE users SET password = ? WHERE id = ?");
         $stmt = $this->connect()->prepare($sql);
@@ -66,7 +67,7 @@ class user extends Db
 
         return $result;
     }
-
+    
     public function getSubscriptionDate($user_id)
     {
         $sql = ("SELECT subscription_expires_at FROM users WHERE id = ?");

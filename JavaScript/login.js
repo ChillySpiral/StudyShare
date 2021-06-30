@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#fail_log").hide();
-    $('#Anmelden_Form').keydown(function (e) {
+    $('#Anmelden_Form').keydown(function (e) { //If the enter key is pressed, the request is sent
         if (e.keyCode == 13) {
             e.preventDefault();
             sendData();
