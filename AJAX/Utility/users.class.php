@@ -67,7 +67,7 @@ class user extends Db
 
         return $result;
     }
-    //Gets the subscription expirey date from a user
+    //Gets the subscription expiry date from a user
     public function getSubscriptionDate($user_id)
     {
         $sql = ("SELECT subscription_expires_at FROM users WHERE id = ?");
