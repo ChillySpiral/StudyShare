@@ -22,7 +22,7 @@ require_once('../AJAX/Utility/users.class.php');
 require_once('../AJAX/Utility/files.class.php');
 $userObj = new user();
 $fileObj = new files();
-
+//Checks if the user is logged in and loads all the user documents
 if (isset($_SESSION['user'])) {
     $user_id = $_SESSION['user'];
     $user = $userObj->getUser($user_id);
@@ -30,20 +30,23 @@ if (isset($_SESSION['user'])) {
 }
 else
 {
+    //If the user is not logged in, he is redirected
     header("location: ../"); 
 }
-
+//submits the requested changes to the database and logs the user out
 if(isset($_POST["editSubmit"])) {
     $userObj->updateUser($_GET["id"], $_POST["email"], $_POST["username"], $_POST["firstname"], $_POST["lastname"]);
 
     header("location: logout.php");
 }
+//If the user selected a document to be deleted, the request is sent to the db and the file is deleted form the server
 if(isset($_GET["delete"])){ 
     $filename = $fileObj->getFileNameByFileID($_GET["delete"]);
     $fileObj->modDelete($_GET["delete"]);
     unlink("../AJAX/uploads/".$filename['filename']."");
     header('Location: ./Profilesettings.php');
 }
+//checks if a subscription has been selected
 if(isset($_POST["subscription"])){
     $param = $_POST["subscription"];
 
@@ -94,7 +97,7 @@ if(isset($_POST["subscription"])){
         //error?
     }
 } 
-
+//If the user wants to download one of their own documents, the file is selected and sent to the client
 if(isset($_GET["download"])){
     $doc = $fileObj->getFilebyFileID($_GET["download"]);
     $filename = $doc["filename"];
@@ -186,7 +189,7 @@ if(isset($_GET["download"])){
 <div class="row">
 <?php
 $isActiveUser = $userObj->isActiveSubscriber($user_id);
-
+//If the user is a subscriber, the fileupload component is included, if not the payment (subscription option) is
 if($isActiveUser){
     include "fileupload.php";
 }

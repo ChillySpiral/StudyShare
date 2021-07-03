@@ -67,7 +67,7 @@ class user extends Db
 
         return $result;
     }
-    
+    //Gets the subscription expirey date from a user
     public function getSubscriptionDate($user_id)
     {
         $sql = ("SELECT subscription_expires_at FROM users WHERE id = ?");
@@ -77,7 +77,7 @@ class user extends Db
 
         return $result["subscription_expires_at"];
     }
-
+    //Sets a subscription (when a user has chosen one subscription option)
     public function setSubscriptionDate($user_id, $timestamp)
     {
         $sql = ("UPDATE users SET subscription_expires_at = ? WHERE id = ?");
@@ -86,8 +86,8 @@ class user extends Db
 
         return $result;
     }
-
-    public function isActiveSubscriber($user_id) //gives back bool if user has a active subscription or not.
+    //gives back bool if user has a active subscription or not.
+    public function isActiveSubscriber($user_id) 
     {
         $tmp = $this->getSubscriptionDate($user_id);
         $tmpDateObj = date_create($tmp);
@@ -98,7 +98,7 @@ class user extends Db
         else
             return false;
     }
-
+    //Returns all the documents a user has uploaded and displays them on their profile
     public function getUserDocuments($user_id){
         $sql = ("SELECT * FROM documents WHERE user_id = ? ORDER BY id DESC");
         $stmt = $this->connect()->prepare($sql);
