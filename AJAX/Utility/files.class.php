@@ -71,7 +71,7 @@ class files extends Db
 
         return $result;
     }
-
+    //Returns the filename of a document selected by its id
     public function getFileNameByFileID($file_id) {
         $sql = ("SELECT filename FROM documents WHERE id = $file_id");
         $stmt = $this->connect()->prepare($sql);
@@ -81,6 +81,7 @@ class files extends Db
         return $result;
     }
 
+    //Joins the documents, subjects and user table in order to deliver all needed information for searching, filtering and displaying
     public function getSearch($text)
     {
         $sql=("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename, documents.subject_id FROM documents 
@@ -96,6 +97,7 @@ class files extends Db
         return $results;
     }
 
+    //Returns all the subject categories
     public function getCategories()
     {
         $sql=("SELECT * FROM subjects");
@@ -105,7 +107,7 @@ class files extends Db
         $results = $stmt->fetchAll();
         return $results;
     }
-
+    //Returns all the documents including information in order to make filtering and displaying possible
     public function getAllDocuments()
     {
         $sql = ("SELECT documents.id, documents.title ,subjects.name, documents.description, users.username, documents.filename, documents.subject_id FROM documents 

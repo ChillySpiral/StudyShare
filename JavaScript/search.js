@@ -1,4 +1,4 @@
-var filter_act_id = -1;
+var filter_act_id = -1; //Checks if a filter is activated, -1 = no filter
 
 $(document).ready(function(){
     loadCategories();
@@ -13,7 +13,7 @@ $(document).ready(function(){
         sendData();
     })
 })
-
+//Sends the search data to the database and appends all results
 function sendData()
 {
     var str = $("#Search_Form").serialize(); //Puts all the form content in one string
@@ -35,7 +35,7 @@ function sendData()
             }
         }
     });
-    if(filter_act_id != -1)
+    if(filter_act_id != -1) //If a filter is already active, show only the fitting documents
     {
         for(var i=0; i< 5; i++) //!!!Muss geändert werden, wenn mehr Categories verfügbar sind
         {
@@ -46,7 +46,7 @@ function sendData()
         }
     }
 }
-
+//Loads the subjects from the database and appends them to to the filter options
 function loadCategories()
 {
     $.ajax({
@@ -66,7 +66,7 @@ function loadCategories()
         }
     })
 }
-
+//If no filter is active or no search has been done, all documents are shown when the page is loaded sorted by the newest on top
 function getAllDocuments()
 {
     $.ajax({
@@ -86,7 +86,7 @@ function getAllDocuments()
         }
     })
 }
-
+//Hides all documents which do not match the filter id of the subject
 function filterCategory(sub_id)
 {
     console.log(sub_id);

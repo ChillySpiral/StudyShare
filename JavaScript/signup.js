@@ -13,7 +13,7 @@ $(document).ready(function(){
     })
 })
 
-
+//Sends the Signup Form data to the database, if the entry has been succesful the user is redirected  to the login page
 function sendData()
 {
     var str = $("#Registrieren_Form").serialize(); //Puts all the form content in one string

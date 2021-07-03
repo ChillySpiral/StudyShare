@@ -2,13 +2,14 @@
 require_once('AJAX/Utility/users.class.php');
 $user = new user();
 
-
+//Checks if the user is logged in, if not redirects them to the frontpage
 
 if(!isset($_SESSION['user']))
 {
     header('Location: ../');
 }
 
+//Checks if the user is a subscriber, if not they will be redirected to the profile page, where they can select a subscription
 $subscriber_id = $_SESSION['user'];
 
 $isActiveUser = $user->isActiveSubscriber($subscriber_id);

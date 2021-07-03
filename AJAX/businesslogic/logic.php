@@ -104,6 +104,7 @@ class SimpleLogic
                 unlink("../AJAX/uploads/".$filename['filename']."");
                 break;
             case 'search':
+                //Parses the searchstring and sends it to the database
                 parse_str($param, $paramArray);
                 $text = array_pop($paramArray);
                 $res = $this->file_con->getSearch($text);
