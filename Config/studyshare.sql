@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 21. Jun 2021 um 15:46
--- Server-Version: 10.4.14-MariaDB
--- PHP-Version: 7.4.10
+-- Erstellungszeit: 03. Jul 2021 um 20:02
+-- Server-Version: 10.4.18-MariaDB
+-- PHP-Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,15 +37,6 @@ CREATE TABLE `documents` (
   `filename` varchar(256) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Daten für Tabelle `documents`
---
-
-INSERT INTO `documents` (`id`, `user_id`, `subject_id`, `title`, `description`, `Review`, `filename`, `created_at`) VALUES
-(2, 2, 1, 'hello', 'test', b'1', 'architecture_studyshare_group7.pdf', '2021-05-18 11:26:04'),
-(4, 1, 1, 'asdf', 'asdfasdf', b'1', 'Bewerbung_Denk.pdf', '2021-06-07 11:19:40'),
-(7, 5, 0, 'Test', '', b'1', 'ANGABEN_6-11.pdf', '2021-06-21 11:21:42');
 
 -- --------------------------------------------------------
 
@@ -104,13 +95,31 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `firstname`, `lastname`, `password`, `is_admin`, `created_at`, `subscription_expires_at`) VALUES
-(1, 'DenkLa', 'laurell@gmx.at', 'Laurell', 'Denk', '$2y$10$EMXfMA2uxx1xwTxbpv7oI.eWp948uaEAUS0/9jjhNtIdKsOVp7jui', b'1', '2021-05-17 18:45:08', ''),
 (2, 'novalis', 'ibrahim@adouni.dev', 'Ibrahim', 'Adouni', '$2y$10$eYI5b50pF4V65hdrNwwEMOILtGatqyONiHTosPlHzEFj67rd6xY12', b'1', '2021-05-18 11:23:47', '2021-06-30 20:15:00'),
 (3, 'laurell', 'Laurell@gmx.at', 'Laurell', 'Denk', '$2y$10$iM/ldMEgR6SFy/HuorQvz.CZZKQGUZ4onhvt7MR4AofnnUpZJ4/0K', b'1', '2021-06-04 12:22:25', '2022-06-21 11:20:33'),
-(4, 'asdfasdf', 'asdf@aasd.at', 'asdfasdf', 'asdfasdf', '$2y$10$lamgwk7zkLvqGwKN2afVnO1Lcix69vp.Mrt9fsWkSswCwlVrMmvSa', b'1', '2021-06-07 10:32:56', '2021-10-21 11:19:21'),
-(5, 'user', 'muster@mail.com', 'Maxi', 'Musteruser', '$2y$10$bar3lCuP8zQX7fTpAw68lOJgq5gm3p/siF3Lfumqzl8yW10y4EH5e', b'1', '2021-06-07 10:32:59', '2021-08-21 11:18:43');
+(9, 'KyoHolic', 'adriankoch@mail.com', 'Adrian', 'Koch', '$2y$10$jS.iMfiwyzG8EGaw9EYy0OaNeFhU1i2dab86qI9XoJ5NIvAWI2X6C', b'0', '2021-07-03 19:55:11', ''),
+(10, 'Xeelta', 'gessnerchris@gmx.de', 'Christian', 'Gessner', '$2y$10$G5Rw4M5TdGf5l.y.sVh0nu9O/R9YWOg9t5qkaJqP.D5DJw.6NWVcm', b'0', '2021-07-03 19:55:48', ''),
+(11, 'legarou', 'mbilaver@outlook.com', 'Matilda', 'Bilaver', '$2y$10$5wkMm.hLPStykC6zCrKbyuxTPJyKWTHm24RJClfK9dTPAH0Ypc27a', b'0', '2021-07-03 19:56:42', ''),
+(12, 'Lvnka', 'mweber@googlemail.com', 'Melina', 'Weber', '$2y$10$PccCI6/ugSLmOPutbtoDaOc3s/a8F8O3UGt55kG3vPml1zuZ5.Bkq', b'0', '2021-07-03 19:58:33', ''),
+(13, 'tangens', 'lucatgnl@web.de', 'Luca', 'Tangl', '$2y$10$CwcsXv3CMLHY/ujWdWS5AecGeSw/Ngm7uReRsdo3HaaYG5.GxmZne', b'0', '2021-07-03 19:59:20', ''),
+(14, 'OnlineFlowerGirl', 'chrisdenks@webmail.com', 'Christiane', 'Denkner', '$2y$10$k6K0oVwj0XeBAtxBkHLCYuZ20lvhDjEsY3yP2Lri7fb150u65/kS.', b'0', '2021-07-03 20:01:05', '');
 
 --
+-- Daten für Tabelle `documents`
+--
+
+INSERT INTO `documents` (`id`, `user_id`, `subject_id`, `title`, `description`, `Review`, `filename`, `created_at`) VALUES
+(8, 2, 4, 'IT - Security Zusammenfassung 1', 'Inhalt:\r\n- Grundlagen Security\r\n- Grundlagen Kryptographie\r\n- Symmetrische und Asymmetrische Verfahren\r\n- Anwendung von Zertifikaten\r\n- DAC/MAC/RBAC\r\n- Passwort-Entropie\r\n- Perimetersicherheit', b'1', 'infosec_kf.pdf', '2021-06-30 15:24:56'),
+(9, 3, 4, 'Computer Security - Principles and Practice', 'Computer Security: Principles and Practice, 4th Edition, is ideal for courses in Computer/Network Security. The need for education in computer security and related topics continues to grow at a dramatic rate—and is essential for anyone studying Computer Science or Computer Engineering.', b'1', 'Computer Security - Principles and Practice 4th Global Edition (2018).pdf', '2021-06-30 15:27:58'),
+(10, 10, 1, 'C++ OOP Basics', '- Software Tests\r\n- Klassen & Objekte\r\n- Konstruktoren\r\n- Dekonstruktor\r\n- Kopierkonstruktor\r\n- Setter Methoden\r\n- Getter Methoden\r\n- Speicherverwaltung\r\n- Programmstrukturierung', b'1', 'C++_OOP.pdf', '2021-06-30 19:12:59'),
+(11, 10, 3, 'SQL Basics', '- Syntax\r\n- Select (Distinct)\r\n- WHERE\r\n- AND, OR, NOT\r\n- ORDER BY\r\n- INSERT INTO\r\n- NULL VALUES\r\n- Update\r\n- Delete\r\n- COUNT, AVG, SUM', b'1', 'SQL_Basics.pdf', '2021-06-30 19:14:26'),
+(12, 11, 2, 'PHP - Zusammenfassung 1', '- Variables\r\n- Data Types\r\n- Switch\r\n- Loops\r\n- Arrays', b'0', 'PHP - Zusammenfassung 1.pdf', '2021-07-03 19:33:52'),
+(13, 9, 2, 'PHP - Zusammenfassung 2', '- Cookies\r\n- Sessions\r\n- Filters\r\n- JSON\r\n- Exceptions', b'0', 'PHP - Zusammenfassung 2.pdf', '2021-07-03 19:34:28'),
+(14, 3, 1, 'Oasencrawler', 'Inhalt:\r\n- Interface\r\n- Klassen\r\n- Objekte\r\n- Exceptions\r\n- Assert\r\n- Konstruktor\r\n- Dekonstruktor\r\n- Heap ', b'1', 'C++_OOP_Oasencrawler.pdf', '2021-07-03 19:36:00'),
+(15, 3, 1, 'HOW TO: Operatoren überladen & Friends', '- Allgemein\r\n- Beispielcode\r\n', b'0', 'Operatoren_Friends (2).pdf', '2021-07-03 19:39:28'),
+(16, 12, 3, 'XML und JSON', '- Dokumenterstellung\r\n- Verfahren\r\n- Speicherung\r\n- Übungen', b'0', 'Datenformate.pdf', '2021-07-03 19:42:01'),
+(17, 14, 4, 'IT Security Zusammenfassung 2', '- Sichere Kommunikation 1\r\n- Sichere Kommunikation 2\r\n- Virtual Private Networks', b'1', 'ITZSFM2.pdf', '2021-07-03 19:43:53');
+
 -- Indizes der exportierten Tabellen
 --
 
@@ -149,13 +158,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints der exportierten Tabellen
