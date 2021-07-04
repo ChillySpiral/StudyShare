@@ -213,7 +213,7 @@ else if(!$isActiveUser){
         <img class="pdf-image" src="../images/static-images/pdf.png"></div>
     <div class="pdf-description col-4">
         <?php echo $documents[$p]["description"] ?>
-        <p><?php echo $documents[$p]["subject_id"] ?></p><a href="?download=<?php echo $documents[$p]["id"]?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Anzeigen</a>   <a href="?delete=<?php echo $documents[$p]["id"] ?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Löschen</a>
+        <p></p><a href="?download=<?php echo $documents[$p]["id"]?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Anzeigen</a>   <a href="?delete=<?php echo $documents[$p]["id"] ?>" class="btn btn-primary" style="background: #fe5f55;border-radius: 15px;">Löschen</a>
     </div>
     </div>
     </div>
