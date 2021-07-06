@@ -97,6 +97,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `firstname`, `lastname`, `password`, `is_admin`, `created_at`, `subscription_expires_at`) VALUES
 (2, 'novalis', 'ibrahim@adouni.dev', 'Ibrahim', 'Adouni', '$2y$10$eYI5b50pF4V65hdrNwwEMOILtGatqyONiHTosPlHzEFj67rd6xY12', b'1', '2021-05-18 11:23:47', '2021-06-30 20:15:00'),
 (3, 'laurell', 'Laurell@gmx.at', 'Laurell', 'Denk', '$2y$10$iM/ldMEgR6SFy/HuorQvz.CZZKQGUZ4onhvt7MR4AofnnUpZJ4/0K', b'1', '2021-06-04 12:22:25', '2022-06-21 11:20:33'),
+(6, 'admin', 'admin@admin.at', 'admin', 'admin', '$2y$10$n70SJhYUZcAEa7x9t23LgOB0nD.Y85AW/U56H5LbdsjxPoxGVCIfG', b'1', '2021-06-22 10:16:32', '2022-06-22 10:33:43'),
 (9, 'KyoHolic', 'adriankoch@mail.com', 'Adrian', 'Koch', '$2y$10$jS.iMfiwyzG8EGaw9EYy0OaNeFhU1i2dab86qI9XoJ5NIvAWI2X6C', b'0', '2021-07-03 19:55:11', ''),
 (10, 'Xeelta', 'gessnerchris@gmx.de', 'Christian', 'Gessner', '$2y$10$G5Rw4M5TdGf5l.y.sVh0nu9O/R9YWOg9t5qkaJqP.D5DJw.6NWVcm', b'0', '2021-07-03 19:55:48', ''),
 (11, 'legarou', 'mbilaver@outlook.com', 'Matilda', 'Bilaver', '$2y$10$5wkMm.hLPStykC6zCrKbyuxTPJyKWTHm24RJClfK9dTPAH0Ypc27a', b'0', '2021-07-03 19:56:42', ''),
